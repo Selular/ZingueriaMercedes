@@ -2,39 +2,41 @@
 import { GoogleGenAI } from "@google/genai";
 import { products } from "../data/products";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export async function getProductRecommendation(userQuery: string): Promise<string> {
-  const model = "gemini-3-flash-preview";
+  // Inicializamos el cliente dentro de la función para mayor robustez
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const model = 'gemini-3-flash-preview';
+
+  const systemInstruction = `Eres un experto vendedor de "Zinguería Mercedes". Tu misión es asesorar a los clientes sobre estufas Tromen, Lepen y trabajos de zinguería.
   
-  const systemInstruction = `
-    Eres un experto en ventas de "Zinguería Mercedes". Tu objetivo es asesorar a los clientes sobre qué estufa Tromen o Lepen elegir, o qué productos de zinguería necesitan.
-    
-    Catálogo de productos:
-    ${JSON.stringify(products, null, 2)}
-    
-    Reglas:
-    1. Sé cordial y profesional.
-    2. Si el usuario pregunta por calefacción, pregúntale los m2 del ambiente si no los dio.
-    3. Recomienda productos específicos del catálogo.
-    4. Menciona que somos distribuidores oficiales.
-    5. No inventes productos que no están en la lista.
-    6. Usa un tono argentino ("Vení", "Che", "Fijate").
-  `;
+  PRODUCTOS DISPONIBLES:
+  ${products.map(p => `- ${p.name} (${p.brand}): ${p.description.substring(0, 150)}`).join('\n')}
+  
+  DIRECTRICES:
+  1. Sé amable, experto y usa un tono argentino (voseo: "fijate", "vení", "che").
+  2. Si preguntan por calefacción y no especifican m2, preguntá amablemente el tamaño del ambiente.
+  3. Recomienda solo productos que estén en la lista anterior.
+  4. Sé conciso y directo, no des respuestas extremadamente largas.
+  5. Menciona que somos distribuidores oficiales y especialistas en zinguería a medida.`;
 
   try {
     const response = await ai.models.generateContent({
-      model,
+      model: model,
       contents: userQuery,
       config: {
-        systemInstruction,
+        systemInstruction: systemInstruction,
         temperature: 0.7,
       },
     });
 
-    return response.text || "Lo siento, no pude procesar tu consulta. Por favor, intentá de nuevo o contactanos por WhatsApp.";
+    if (!response || !response.text) {
+      throw new Error("Respuesta vacía del modelo");
+    }
+
+    return response.text;
   } catch (error) {
-    console.error("Gemini Error:", error);
-    return "Ups, algo salió mal. ¿Te puedo ayudar con algo más?";
+    console.error("Error detallado de Gemini:", error);
+    // Retornamos un mensaje de error más descriptivo pero amigable
+    return "Disculpá, tuve un pequeño inconveniente técnico al procesar tu consulta. Por favor, intentá escribirme de nuevo o contactanos directamente por WhatsApp para un asesoramiento inmediato.";
   }
 }
