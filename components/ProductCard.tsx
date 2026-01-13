@@ -5,16 +5,24 @@ import { Product } from '../types';
 interface ProductCardProps {
   product: Product;
   onAddToCart: () => void;
+  onClick?: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onClick }) => {
   const formattedPrice = new Intl.NumberFormat('es-AR', {
     style: 'currency',
     currency: 'ARS',
   }).format(product.price);
 
+  const installmentValue = product.installments 
+    ? new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(product.price / product.installments)
+    : null;
+
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-zinc-100 flex flex-col h-full">
+    <div 
+      onClick={onClick}
+      className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-zinc-100 flex flex-col h-full cursor-pointer relative"
+    >
       <div className="relative aspect-square overflow-hidden bg-zinc-100">
         <img 
           src={product.imageUrl} 
@@ -25,9 +33,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
           <span className="bg-black text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
             {product.brand}
           </span>
-          <span className="bg-white text-zinc-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm border border-zinc-100">
-            {product.category}
-          </span>
+          {product.installments && (
+            <span className="bg-orange-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+              {product.installments} Cuotas Fijas
+            </span>
+          )}
         </div>
       </div>
 
@@ -35,37 +45,32 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
         <h3 className="text-lg font-bold text-zinc-900 mb-2 group-hover:text-orange-600 transition-colors leading-tight">
           {product.name}
         </h3>
-        <p className="text-zinc-500 text-sm mb-4 line-clamp-2 leading-relaxed">
-          {product.description}
-        </p>
         
-        {product.features && (
-          <ul className="mb-4 space-y-1">
-            {product.features.slice(0, 2).map((f, i) => (
-              <li key={i} className="text-[11px] text-zinc-400 flex items-center gap-2">
-                <span className="w-1 h-1 bg-orange-500 rounded-full"></span>
-                {f}
-              </li>
-            ))}
-          </ul>
-        )}
+        {/* Descripción eliminada para un diseño más compacto */}
 
-        <div className="mt-auto pt-4 flex items-center justify-between">
-          <div>
-            <span className="text-zinc-400 text-xs block uppercase font-bold tracking-tighter">Precio contado</span>
-            <span className="text-xl font-extrabold text-zinc-900">{formattedPrice}</span>
+        <div className="mt-auto pt-4 flex flex-col gap-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="text-zinc-400 text-[10px] block uppercase font-bold tracking-tighter">Precio contado</span>
+              <span className="text-xl font-extrabold text-zinc-900">{formattedPrice}</span>
+              {installmentValue && (
+                <span className="block text-orange-600 text-xs font-bold mt-1">
+                  o {product.installments} cuotas de {installmentValue}
+                </span>
+              )}
+            </div>
+            <button 
+              onClick={(e) => {
+                e.stopPropagation();
+                onAddToCart();
+              }}
+              className="bg-orange-600 text-white p-3 rounded-xl hover:bg-black transition-all transform active:scale-95 shadow-lg shadow-orange-600/20"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+              </svg>
+            </button>
           </div>
-          <button 
-            onClick={(e) => {
-              e.stopPropagation();
-              onAddToCart();
-            }}
-            className="bg-orange-600 text-white p-3 rounded-xl hover:bg-black transition-all transform active:scale-95 shadow-lg shadow-orange-600/20"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
-          </button>
         </div>
       </div>
     </div>
