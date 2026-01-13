@@ -16,6 +16,10 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
     currency: 'ARS',
   }).format(product.price);
 
+  const installmentValue = product.installments 
+    ? new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(product.price / product.installments)
+    : null;
+
   const handleWhatsAppInquiry = () => {
     const phone = "5492324699889";
     const text = `Hola! Estoy viendo en su web el producto "${product.name}" de la marca ${product.brand} y me gustaría recibir más información o asesoramiento técnico.`;
@@ -23,93 +27,97 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
   };
 
   return (
-    <div className="fixed inset-0 z-[120] flex items-center justify-center p-0 md:p-6 lg:p-12 overflow-hidden">
-      {/* Overlay con desenfoque profundo */}
+    <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 sm:p-6 lg:p-10">
+      {/* Overlay con desenfoque */}
       <div 
-        className="absolute inset-0 bg-black/90 backdrop-blur-2xl animate-in fade-in duration-500" 
+        className="absolute inset-0 bg-black/90 backdrop-blur-md transition-opacity duration-300" 
         onClick={onClose} 
       />
       
-      {/* Contenedor Principal: Se ajusta al contenido o al viewport */}
-      <div className="relative w-full max-w-7xl h-full md:h-auto md:max-h-[92vh] bg-white md:rounded-[40px] overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.6)] flex flex-col md:flex-row animate-in zoom-in-95 fade-in slide-in-from-bottom-8 duration-500">
+      {/* Contenedor Principal: Encuadre perfecto sin scroll externo */}
+      <div className="relative w-full max-w-6xl h-full max-h-[90vh] md:h-auto md:max-h-[85vh] bg-white rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row">
         
-        {/* Botón Cerrar Flotante (Desktop) */}
+        {/* Botón Cerrar */}
         <button 
           onClick={onClose} 
-          className="absolute top-8 right-8 z-50 hidden md:flex items-center justify-center w-12 h-12 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 rounded-full transition-all group active:scale-90"
+          className="absolute top-6 right-6 z-[160] flex items-center justify-center w-10 h-10 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 rounded-full transition-all active:scale-90 shadow-md"
         >
-          <svg className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
-        {/* Sección de Imagen - Ocupa la mitad en desktop */}
-        <div className="w-full md:w-1/2 lg:w-[45%] h-[40vh] md:h-full relative bg-zinc-100 overflow-hidden shrink-0">
+        {/* Sección de Imagen */}
+        <div className="w-full md:w-[45%] h-[30vh] md:h-auto relative bg-zinc-200 shrink-0">
           <img 
             src={product.imageUrl} 
             alt={product.name} 
             className="w-full h-full object-cover"
           />
-          {/* Badges sobre la imagen */}
           <div className="absolute top-6 left-6 flex flex-col gap-2">
-             <span className="bg-black/80 backdrop-blur-md text-white px-4 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-[0.2em] shadow-lg">
+             <span className="bg-black/80 backdrop-blur-md text-white px-4 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em]">
                {product.brand}
              </span>
              {product.isBestSeller && (
-               <span className="bg-[#F97316] text-white px-4 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-[0.2em] shadow-lg">
-                 Más Vendido
+               <span className="bg-orange-600 text-white px-4 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em]">
+                 Destacado
                </span>
              )}
           </div>
-          
-          {/* Botón Cerrar (Mobile) */}
-          <button 
-            onClick={onClose} 
-            className="absolute top-6 right-6 md:hidden bg-black/40 backdrop-blur-md text-white p-2 rounded-full"
-          >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
         </div>
 
-        {/* Sección de Contenido - Scroll interno suave */}
+        {/* Sección de Información */}
         <div className="flex-1 flex flex-col min-h-0 bg-white">
-          <div className="flex-1 overflow-y-auto p-8 md:p-12 lg:p-16 custom-scrollbar">
-            <div className="max-w-2xl mx-auto md:mx-0">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-1 w-12 bg-[#F97316]"></div>
-                <span className="text-[10px] font-black text-[#F97316] uppercase tracking-[0.4em]">Detalles Técnicos</span>
+          <div className="flex-1 overflow-y-auto p-6 md:p-12 lg:p-14 custom-scrollbar">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-1 w-10 bg-orange-600"></div>
+                <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.4em]">Ficha Oficial</span>
               </div>
               
-              <h2 className="text-4xl lg:text-5xl font-black text-zinc-900 tracking-tighter leading-tight mb-6">
+              <h2 className="text-3xl lg:text-4xl font-black text-zinc-900 tracking-tighter leading-tight mb-8">
                 {product.name}
               </h2>
 
-              <p className="text-zinc-500 text-lg leading-relaxed font-medium mb-10">
-                {product.description}
-              </p>
+              {/* Descripción eliminada para optimizar el encuadre */}
 
-              {/* Grid de Especificaciones Optimizado */}
+              {/* Financiación Destacada */}
+              {product.installments && (
+                <div className="bg-orange-50 border border-orange-100 p-6 rounded-2xl mb-8 flex items-center gap-6">
+                  <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white shrink-0 shadow-lg shadow-orange-600/20">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-orange-900 font-bold text-[10px] uppercase tracking-wider mb-1">Plan Cuota Simple</h4>
+                    <p className="text-orange-700 text-xl font-black">
+                      {product.installments} cuotas fijas de {installmentValue}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Especificaciones Técnicas */}
               {product.specs && (
-                <div className="grid grid-cols-2 gap-3 mb-12">
+                <div className="grid grid-cols-2 gap-3 mb-8">
                   {product.specs.map((spec, idx) => (
-                    <div key={idx} className="bg-zinc-50 p-5 rounded-2xl border border-zinc-100 flex flex-col hover:border-[#F97316]/30 transition-colors">
-                      <span className="text-[9px] font-black text-zinc-400 uppercase tracking-widest mb-1">{spec.label}</span>
+                    <div key={idx} className="bg-zinc-50 p-4 rounded-xl border border-zinc-100 flex flex-col justify-center">
+                      <span className="text-[8px] font-black text-zinc-400 uppercase tracking-widest mb-1">{spec.label}</span>
                       <span className="text-zinc-900 font-bold text-sm">{spec.value}</span>
                     </div>
                   ))}
                 </div>
               )}
 
-              {/* Lista de Características en Chips */}
+              {/* Características */}
               {product.features && (
-                <div className="mb-8">
-                  <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-4">Puntos Destacados</h4>
+                <div>
+                  <h4 className="text-[9px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-4">Ventajas del producto</h4>
                   <div className="flex flex-wrap gap-2">
                     {product.features.map((feature, idx) => (
-                      <span key={idx} className="bg-orange-50 text-[#F97316] px-4 py-2 rounded-full text-xs font-black border border-orange-100/50">
-                        {feature}
+                      <span key={idx} className="bg-zinc-100 text-zinc-700 px-3 py-1.5 rounded-lg text-[10px] font-bold">
+                        • {feature}
                       </span>
                     ))}
                   </div>
@@ -118,17 +126,17 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
             </div>
           </div>
 
-          {/* Barra de Acción Inferior - Siempre visible */}
-          <div className="shrink-0 p-8 md:p-10 border-t border-zinc-100 bg-white/80 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-6">
+          {/* Footer del Modal (Fijado abajo) */}
+          <div className="p-6 md:p-10 border-t border-zinc-100 bg-zinc-50 flex flex-col sm:flex-row items-center justify-between gap-6 shrink-0">
             <div className="text-center sm:text-left">
-              <p className="text-zinc-400 text-[9px] font-black uppercase tracking-widest mb-1">Precio de Lista</p>
-              <p className="text-4xl font-black text-zinc-900 tracking-tighter">{formattedPrice}</p>
+              <p className="text-zinc-400 text-[9px] font-black uppercase tracking-widest mb-1">Precio Pago Contado</p>
+              <p className="text-3xl font-black text-zinc-900 tracking-tighter">{formattedPrice}</p>
             </div>
             
             <div className="flex gap-3 w-full sm:w-auto">
                <button 
                 onClick={handleWhatsAppInquiry}
-                className="flex-1 sm:flex-none border-2 border-zinc-900 text-zinc-900 px-8 py-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all hover:bg-zinc-900 hover:text-white active:scale-95"
+                className="flex-1 sm:flex-none border-2 border-zinc-900 text-zinc-900 px-6 py-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all hover:bg-zinc-900 hover:text-white active:scale-95"
               >
                 Consultar
               </button>
@@ -137,12 +145,12 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
                   onAddToCart();
                   onClose();
                 }}
-                className="flex-1 sm:flex-none bg-[#F97316] hover:bg-black text-white px-10 py-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all active:scale-95 shadow-xl shadow-orange-600/20 flex items-center justify-center gap-2"
+                className="flex-1 sm:flex-none bg-orange-600 hover:bg-black text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest text-[10px] transition-all active:scale-95 shadow-xl shadow-orange-600/20 flex items-center justify-center gap-2"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-                Al Carrito
+                Agregar
               </button>
             </div>
           </div>
