@@ -407,4 +407,34 @@ export const products: Product[] = [
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
     isBestSeller: true
   },
+ {
+    id: 'l-40',
+    name: 'Horno Para Empotrar ',
+    price: 596.190,
+    category: Category.CALEFACCION,
+    brand: Brand.LEPEN,
+    imageUrl: './fotos/3.png',
+    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
+    isBestSeller: true
+  },
+ {
+    id: 'l-41',
+    name: 'Horno Doble Cámara ',
+    price: 596.190,
+    category: Category.CALEFACCION,
+    brand: Brand.LEPEN,
+    imageUrl: './fotos/3.png',
+    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
+    isBestSeller: true
+  },
+ {
+    id: 'l-42',
+    name: 'Horno Familiar',
+    price: 596.190,
+    category: Category.CALEFACCION,
+    brand: Brand.LEPEN,
+    imageUrl: './fotos/3.png',
+    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
+    isBestSeller: true
+  },
 ];
