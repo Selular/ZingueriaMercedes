@@ -3,34 +3,32 @@ import { Product, Category, Brand } from '../types';
 
 export const products: Product[] = [
   {
-    id: 't-01',
-    name: 'Tromen Calafate',
-    description: 'Estufa a leña de alto rendimiento, ideal para ambientes grandes.',
-    price: 450000,
+    id: 'l-01',
+    name: 'Moquehue Vintage 9000 ', 
+    price: 304.790,
     category: Category.CALEFACCION,
-    brand: Brand.TROMEN,
-    imageUrl: 'https://images.unsplash.com/photo-1545063710-859a86d26786?q=80&w=800&auto=format&fit=crop',
-    features: ['7000 kcal/h', 'Vidrio vitrocerámico', 'Doble combustión'],
+    brand: Brand.LEPEN,
+    imageUrl: './fotos/Untitled(3).png',
+    features: ['9000 kcal/h', 'Vidrio vitrocerámico', 'Cajón cenicero'],
     isBestSeller: true
   },
   {
-    id: 't-02',
-    name: 'Tromen Pehuén 7000',
-    description: 'Excelente balance entre diseño y eficiencia calórica.',
-    price: 320000,
-    category: Category.CALEFACCION,
-    brand: Brand.TROMEN,
-    imageUrl: 'https://images.unsplash.com/photo-1542332213-31f87348057f?q=80&w=800&auto=format&fit=crop',
-    features: ['6000 kcal/h', 'Cajón cenicero', 'Hasta 80m2']
-  },
-  {
-    id: 'l-01',
-    name: 'Lepen 9000 Classic',
-    description: 'Un clásico de la calefacción argentina, robusto y confiable.',
-    price: 380000,
+    id: 'l-02',
+    name: 'Moquehue Vintage 13900',
+    price: 455.790,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'https://images.unsplash.com/photo-1516663235285-84698867a7da?q=80&w=800&auto=format&fit=crop',
+    imageUrl: './fotos/3.png',
+    features: [' 13900 kcal/h', 'Cajón cenicero', 'Hasta 100m2']
+  },
+  {
+    id: 'l-03',
+    name: 'Moquehue 20000 ',
+    description: 'Un clásico de la calefacción argentina, robusto y confiable.',
+    price: 596.190,
+    category: Category.CALEFACCION,
+    brand: Brand.LEPEN,
+    imageUrl: './fotos/',
     features: ['9000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
     isBestSeller: true
   },
