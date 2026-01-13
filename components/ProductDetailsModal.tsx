@@ -37,7 +37,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
       {/* Contenedor Principal: Encuadre perfecto sin scroll externo */}
       <div className="relative w-full max-w-6xl h-full max-h-[90vh] md:h-auto md:max-h-[85vh] bg-white rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row">
         
-        {/* Botón Cerrar */}
+        {/* Cerrar */}
         <button 
           onClick={onClose} 
           className="absolute top-6 right-6 z-[160] flex items-center justify-center w-10 h-10 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 rounded-full transition-all active:scale-90 shadow-md"
@@ -72,16 +72,16 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
             <div className="max-w-2xl">
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-1 w-10 bg-orange-600"></div>
-                <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.4em]">Ficha Oficial</span>
+                <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.4em]">Detalles del Producto</span>
               </div>
               
               <h2 className="text-3xl lg:text-4xl font-black text-zinc-900 tracking-tighter leading-tight mb-8">
                 {product.name}
               </h2>
 
-              {/* Descripción eliminada para optimizar el encuadre */}
+            
 
-              {/* Financiación Destacada */}
+              {/* Financiación */}
               {product.installments && (
                 <div className="bg-orange-50 border border-orange-100 p-6 rounded-2xl mb-8 flex items-center gap-6">
                   <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white shrink-0 shadow-lg shadow-orange-600/20">

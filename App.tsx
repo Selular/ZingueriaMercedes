@@ -23,8 +23,8 @@ const App: React.FC = () => {
     return products.filter(p => {
       const matchCategory = selectedCategory === 'Todos' || p.category === selectedCategory;
       const matchBrand = selectedBrand === 'Todos' || p.brand === selectedBrand;
-      const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          p.description.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ;
+                         
       return matchCategory && matchBrand && matchSearch;
     });
   }, [selectedCategory, selectedBrand, searchQuery]);
