@@ -10,9 +10,9 @@ export const products: Product[] = [
     price: 304.790,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/Untitled(3).png',
+    imageUrl: 'fotos/Moquehue9000.png',
     features: ['9000 kcal/h', 'Vidrio vitrocerámico', 'Cajón cenicero'],
-    isBestSeller: true
+    isBestSeller: false
   },
   {
     id: 'l-02',
@@ -20,8 +20,9 @@ export const products: Product[] = [
     price: 455.790,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/3.png',
-    features: [' 13900 kcal/h', 'Cajón cenicero', 'Hasta 100m2']
+    imageUrl: 'fotos/Moquehue13900 .png',
+    features: [' 13900 kcal/h', 'Cajón cenicero', 'Hasta 100m2'],
+    isBestSeller: false
   },
   {
     id: 'l-03',
@@ -29,9 +30,9 @@ export const products: Product[] = [
     price: 596.190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/3.png',
+    imageUrl: 'fotos/Moquehue20000.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    isBestSeller: false
   },
  {
     id: 'l-04',
@@ -39,9 +40,9 @@ export const products: Product[] = [
     price: 596.190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/3.png',
+    imageUrl: 'fotos/Rond7000.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    isBestSeller: false
   },
  
    {
@@ -50,9 +51,9 @@ export const products: Product[] = [
     price: 596.190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/3.png',
+    imageUrl: 'fotos/Rond7000ConHorno.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    isBestSeller: false
   },
   {
     id: 'l-06',
@@ -60,7 +61,7 @@ export const products: Product[] = [
     price: 596.190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/3.png',
+    imageUrl: 'fotos/7000Premium.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
     isBestSeller: true
   },
