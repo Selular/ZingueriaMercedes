@@ -10,7 +10,7 @@ export const products: Product[] = [
     price: 304790,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Moquehue9000.png',
+    imageUrl: '/fotos/Moquehue9000.png',
     features: ['9000 kcal/h', 'Vidrio vitrocerámico', 'Cajón cenicero'],
     isBestSeller: false
   },
