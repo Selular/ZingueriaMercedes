@@ -63,7 +63,7 @@ export const products: Product[] = [
     brand: Brand.LEPEN,
     imageUrl: 'fotos/7000Premium.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    isBestSeller: false
   },
   {
     id: 'l-07',
@@ -71,9 +71,9 @@ export const products: Product[] = [
     price: 596.190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/3.png',
+    imageUrl: 'fotos/Moquehue8000.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    isBestSeller: false
   },
   {
     id: 'l-08',
@@ -81,9 +81,9 @@ export const products: Product[] = [
     price: 596.190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/3.png',
+    imageUrl: 'fotos/Moquehue13500.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    isBestSeller: false
   },
   {
     id: 'l-09',
@@ -91,7 +91,7 @@ export const products: Product[] = [
     price: 596.190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/3.png',
+    imageUrl: 'fotos/Moquehue13500horno.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
     isBestSeller: true
   },
