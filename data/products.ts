@@ -20,7 +20,7 @@ export const products: Product[] = [
     price: 455790,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Moquehue13900 .png',
+    imageUrl: '/fotos/Moquehue13900 .png',
     features: [' 13900 kcal/h', 'Cajón cenicero', 'Hasta 100m2'],
     isBestSeller: false
   },
@@ -30,7 +30,7 @@ export const products: Product[] = [
     price: 596190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Moquehue20000.png',
+    imageUrl: '/fotos/Moquehue20000.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
     isBestSeller: false
   },
@@ -40,7 +40,7 @@ export const products: Product[] = [
     price: 596190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Rond7000.png',
+    imageUrl: '/fotos/Rond7000.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
     isBestSeller: false
   },
@@ -51,7 +51,7 @@ export const products: Product[] = [
     price: 596.190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Rond7000ConHorno.png',
+    imageUrl: '/fotos/Rond7000ConHorno.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
     isBestSeller: false
   },
@@ -61,7 +61,7 @@ export const products: Product[] = [
     price: 596.190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/7000Premium.png',
+    imageUrl: '/fotos/7000Premium.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
     isBestSeller: false
   },
@@ -71,7 +71,7 @@ export const products: Product[] = [
     price: 596.190,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Moquehue8000.png',
+    imageUrl: '/fotos/Moquehue8000.png',
     features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
     isBestSeller: false
   },
