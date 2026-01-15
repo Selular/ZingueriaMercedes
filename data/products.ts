@@ -8,17 +8,19 @@ export const products: Product[] = [
     id: 'l-01',
     name: 'Moquehue Vintage 9000', 
     price: 304790.00,
-    installments:
+    installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
     imageUrl: '/fotos/Moquehue9000.png',
     features: ['9000 kcal/h', 'Vidrio vitrocerámico', 'Cajón cenicero','Doble combustión'],
     isBestSeller: false,
     specs: [
-    { label: 'Potencia', value: '7000 kcal/h' },
-    { label: 'Ambiente', value: 'Hasta 90m2' },
-    { label: 'Salida', value: '6 pulgadas' },
-    { label: 'Peso', value: '85 kg' }
+    { label: 'Potencia', value: '9000 kcal/h' },
+    { label: 'Ambiente', value: 'Hasta 70m2' },
+    { label: 'Salidas', value: 'Doble camara' },
+    { label: 'Alto', value: '57 cm' },
+    { label: 'Ancho', value: '43 cm' },
+    { label: 'Profundidad', value: '39 cm' }
     ],
     
   },
