@@ -28,13 +28,14 @@ export interface Product {
   id: string;
   name: string;
   price: number;
+  installments?: number; // Cantidad de cuotas (ej: 12)
   category: Category;
   brand: Brand;
   imageUrl: string;
   features?: string[];
+  specs?: ProductSpec[];
   isBestSeller?: boolean;
 }
-
 export interface CartItem extends Product {
   quantity: number;
 }
