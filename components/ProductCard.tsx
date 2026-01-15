@@ -14,9 +14,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onClick
     currency: 'ARS',
   }).format(product.price);
 
-  const installmentValue = product.installments 
-    ? new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(product.price / product.installments)
-    : null;
+  // Simulamos un recargo por interés (aprox 30% para 6 cuotas)
+  const cuota6 = new Intl.NumberFormat('es-AR', { 
+    style: 'currency', 
+    currency: 'ARS' 
+  }).format((product.price * 1.30) / 6);
 
   return (
     <div 
@@ -30,14 +32,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onClick
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute top-4 left-4 flex flex-col gap-2">
-          <span className="bg-black text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+          <span className="bg-black text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
             {product.brand}
           </span>
-          {product.installments && (
-            <span className="bg-orange-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
-              {product.installments} Cuotas Fijas
-            </span>
-          )}
+          <span className="bg-zinc-800 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+            3 y 6 CUOTAS FIJAS
+          </span>
         </div>
       </div>
 
@@ -46,18 +46,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onClick
           {product.name}
         </h3>
         
-        {/* Descripción eliminada para un diseño más compacto */}
-
         <div className="mt-auto pt-4 flex flex-col gap-3">
           <div className="flex items-center justify-between">
             <div>
               <span className="text-zinc-400 text-[10px] block uppercase font-bold tracking-tighter">Precio contado</span>
               <span className="text-xl font-extrabold text-zinc-900">{formattedPrice}</span>
-              {installmentValue && (
-                <span className="block text-orange-600 text-xs font-bold mt-1">
-                  o {product.installments} cuotas de {installmentValue}
-                </span>
-              )}
+              <span className="block text-zinc-500 text-xs font-bold mt-1">
+                o 6 cuotas fijas de {cuota6}
+              </span>
             </div>
             <button 
               onClick={(e) => {

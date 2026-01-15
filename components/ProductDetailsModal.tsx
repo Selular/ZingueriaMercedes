@@ -11,18 +11,20 @@ interface ProductDetailsModalProps {
 const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onClose, onAddToCart }) => {
   if (!product) return null;
 
-  const formattedPrice = new Intl.NumberFormat('es-AR', {
+  const currencyFormatter = new Intl.NumberFormat('es-AR', {
     style: 'currency',
     currency: 'ARS',
-  }).format(product.price);
+  });
 
-  const installmentValue = product.installments 
-    ? new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(product.price / product.installments)
-    : null;
+  const formattedPrice = currencyFormatter.format(product.price);
+  
+  // Simulamos intereses (15% para 3 cuotas, 30% para 6 cuotas)
+  const cuota3Value = currencyFormatter.format((product.price * 1.15) / 3);
+  const cuota6Value = currencyFormatter.format((product.price * 1.30) / 6);
 
   const handleWhatsAppInquiry = () => {
     const phone = "5492324699889";
-    const text = `Hola! Estoy viendo en su web el producto "${product.name}" de la marca ${product.brand} y me gustaría recibir más información o asesoramiento técnico.`;
+    const text = `Hola! Estoy viendo en su web el producto "${product.name}" de la marca ${product.brand} y me interesan los planes de pago en cuotas.`;
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -34,10 +36,10 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
         onClick={onClose} 
       />
       
-      {/* Contenedor Principal: Encuadre perfecto sin scroll externo */}
+      {/* Contenedor Principal */}
       <div className="relative w-full max-w-6xl h-full max-h-[90vh] md:h-auto md:max-h-[85vh] bg-white rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row">
         
-        {/* Cerrar */}
+        {/* Botón Cerrar */}
         <button 
           onClick={onClose} 
           className="absolute top-6 right-6 z-[160] flex items-center justify-center w-10 h-10 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 rounded-full transition-all active:scale-90 shadow-md"
@@ -58,11 +60,9 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
              <span className="bg-black/80 backdrop-blur-md text-white px-4 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em]">
                {product.brand}
              </span>
-             {product.isBestSeller && (
-               <span className="bg-orange-600 text-white px-4 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em]">
-                 Destacado
-               </span>
-             )}
+             <span className="bg-orange-600 text-white px-4 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em]">
+               ZINGUERÍA PROPIA
+             </span>
           </div>
         </div>
 
@@ -72,31 +72,26 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
             <div className="max-w-2xl">
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-1 w-10 bg-orange-600"></div>
-                <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.4em]">Detalles del Producto</span>
+                <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.4em]">Financiación Disponible</span>
               </div>
               
               <h2 className="text-3xl lg:text-4xl font-black text-zinc-900 tracking-tighter leading-tight mb-8">
                 {product.name}
               </h2>
 
-            
-
-              {/* Financiación */}
-              {product.installments && (
-                <div className="bg-orange-50 border border-orange-100 p-6 rounded-2xl mb-8 flex items-center gap-6">
-                  <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white shrink-0 shadow-lg shadow-orange-600/20">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="text-orange-900 font-bold text-[10px] uppercase tracking-wider mb-1">Plan Cuota Simple</h4>
-                    <p className="text-orange-700 text-xl font-black">
-                      {product.installments} cuotas fijas de {installmentValue}
-                    </p>
-                  </div>
+              {/* Opciones de Cuotas con Interés */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div className="bg-zinc-100 p-5 rounded-2xl border border-zinc-200 flex flex-col relative overflow-hidden">
+                   <span className="text-zinc-400 text-[8px] font-black uppercase tracking-[0.2em] mb-1">Financiación</span>
+                   <p className="text-zinc-900 text-lg font-black leading-none">3 CUOTAS FIJAS</p>
+                   <p className="text-zinc-500 text-xs font-bold mt-1">Valor por cuota: <span className="text-zinc-900">{cuota3Value}</span></p>
                 </div>
-              )}
+                <div className="bg-zinc-900 p-5 rounded-2xl flex flex-col relative overflow-hidden group shadow-lg">
+                   <span className="text-orange-500 text-[8px] font-black uppercase tracking-[0.2em] mb-1">Plan Extendido</span>
+                   <p className="text-white text-lg font-black leading-none">6 CUOTAS FIJAS</p>
+                   <p className="text-zinc-400 text-xs font-bold mt-1">Valor por cuota: <span className="text-white font-black">{cuota6Value}</span></p>
+                </div>
+              </div>
 
               {/* Especificaciones Técnicas */}
               {product.specs && (
@@ -113,7 +108,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
               {/* Características */}
               {product.features && (
                 <div>
-                  <h4 className="text-[9px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-4">Ventajas del producto</h4>
+                  <h4 className="text-[9px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-4">Garantía y Confianza</h4>
                   <div className="flex flex-wrap gap-2">
                     {product.features.map((feature, idx) => (
                       <span key={idx} className="bg-zinc-100 text-zinc-700 px-3 py-1.5 rounded-lg text-[10px] font-bold">
