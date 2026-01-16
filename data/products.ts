@@ -721,6 +721,101 @@ export const products: Product[] = [
     { label: 'Profundidad', value: '57 cm' }
     ],
   },
+  {
+    id: 'l-47',
+    name: 'Parrilla Barbacoa',
+    price: 589990.00,
+    category: Category.PARRILLAS,
+    brand: Brand.LEPEN,
+    imageUrl: 'fotos/Barbacoa.png',
+    isBestSeller: false,
+    specs: [
+    
+    { label: 'Alto', value: '111,5 cm' },
+    { label: 'Ancho', value: '137 cm' },
+    { label: 'Profundidad', value: '48,5 cm' }
+    ],
+  },
+
+  {
+    id: 'l-48',
+    name: 'Parrilla Fast Food',
+    price: 349900.00,
+    category: Category.PARRILLAS,
+    brand: Brand.LEPEN,
+    imageUrl: 'fotos/FastFood.png',
+    isBestSeller: false,
+    specs: [
+     
+    { label: 'Alto', value: '104 cm' },
+    { label: 'Ancho', value: '94 cm' },
+    { label: 'Profundidad', value: '53 cm' }
+    ],
+  },
+
+  {
+    id: 'l-49',
+    name: 'Parrilla Argento',
+    price: 1620590.00,
+    category: Category.PARRILLAS,
+    brand: Brand.LEPEN,
+    imageUrl: 'fotos/ParrillaArgento.png',
+    isBestSeller: false,
+    specs: [
+   
+    { label: 'Alto', value: '56,7 cm' },
+    { label: 'Ancho', value: '90,5 cm' },
+    { label: 'Profundidad', value: '66,7 cm' }
+    ],
+  },
+  {
+    id: 'l-50',
+    name: 'Fogonero Parrillero Premium',
+    price: 751690.00,
+    category: Category.FOGONES,
+    brand: Brand.LEPEN,
+    imageUrl: 'fotos/FogoneroParrilleroPremium.png',
+    isBestSeller: false,
+    specs: [
+    { label: 'Patas Altas', value: '71 cm' },
+    { label: 'Alto', value: '46,5 cm' },
+    { label: 'Ancho', value: '110 cm' },
+    { label: 'Profundidad', value: '110 cm' }
+    ],
+  },
+  {
+    id: 'l-51',
+    name: 'Fogonero Parrillero Wheels',
+    price: 481390.00,
+    category: Category.FOGONES,
+    brand: Brand.LEPEN,
+    imageUrl: 'fotos/FogoneroWheels.png',
+    isBestSeller: false,
+    specs: [
+
+    { label: 'Alto', value: '71 cm' },
+    { label: 'Ancho', value: '110 cm' },
+    { label: 'Profundidad', value: '110 cm' }
+    ],
+  },
+  {
+    id: 'l-52',
+    name: 'Fogonero Circular',
+    price: 388890.00,
+    category: Category.FOGONES,
+    brand: Brand.LEPEN,
+    imageUrl: 'fotos/FogoneroCircular.png',
+    isBestSeller: false,
+    specs: [
+   
+    { label: 'Alto', value: '39 cm' },
+    { label: 'Ancho', value: '80 cm' },
+    { label: 'Profundidad', value: '110 cm' }
+    ],
+  },
+
+
+
 
   
   
