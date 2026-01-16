@@ -6,7 +6,6 @@ import Navbar from './components/Navbar';
 import ProductCard from './components/ProductCard';
 import Sidebar from './components/Sidebar';
 import CartSidebar from './components/CartSidebar';
-import AIAssistant from './components/AIAssistant';
 import Hero from './components/Hero';
 import BestSellers from './components/BestSellers';
 import ProductDetailsModal from './components/ProductDetailsModal';
@@ -42,7 +41,7 @@ const App: React.FC = () => {
     }
   };
 
-  /*scrollcito*/
+  // Efecto para scrollear al catálogo cuando se busca algo
   useEffect(() => {
     if (searchQuery.length > 0) {
       scrollToSection('catalog-start');
@@ -158,8 +157,6 @@ const App: React.FC = () => {
         onClose={() => setSelectedProduct(null)} 
         onAddToCart={() => selectedProduct && addToCart(selectedProduct)} 
       />
-
-      <AIAssistant />
 
       <footer className="bg-black text-white pt-20 pb-12 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
