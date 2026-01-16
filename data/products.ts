@@ -566,7 +566,7 @@ export const products: Product[] = [
     price: 1100390.00,
     category: Category.CENTRALES,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/3.png',
+    imageUrl: './fotos/20000C.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -583,7 +583,7 @@ export const products: Product[] = [
     price: 1206190.00,
     category: Category.CENTRALES,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/3.png',
+    imageUrl: 'fotos/Untitled (20).png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -600,7 +600,7 @@ export const products: Product[] = [
     price: 1703690.00,
     category: Category.CENTRALES,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/3.png',
+    imageUrl: 'fotos/Untitled (20).png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -613,11 +613,11 @@ export const products: Product[] = [
   },
   {
     id: 'l-39',
-    name: 'Four Face ',
+    name: 'Four Face',
     price: 1808990.00,
     category: Category.CENTRALES,
     brand: Brand.LEPEN,
-    imageUrl: '',
+    imageUrl: 'fotos/fourface.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
