@@ -35,7 +35,7 @@ const AIAssistant: React.FC = () => {
           <div className="bg-black text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
             
-              <div className="w-8 h-8 flex items-center justify-center font-black text-2xl italic text-[#F97316] drop-shadow-[0_0_8px_rgba(249,115,22,0.3)]">
+              <div className="w-8 h-8 flex items-center justify-center font-black text-2xl text-[#F97316] drop-shadow-[0_0_8px_rgba(249,115,22,0.3)]">
                 ZM
               </div>
               <div>
