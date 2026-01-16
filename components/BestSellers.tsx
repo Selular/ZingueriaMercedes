@@ -14,11 +14,13 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
 
+  // Verifica la posición del scroll para habilitar/deshabilitar flechas
   const checkScroll = () => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      setShowLeftArrow(scrollLeft > 20);
-      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 20);
+      // Usamos un pequeño margen (5px) para evitar problemas de redondeo en navegadores
+      setShowLeftArrow(scrollLeft > 5);
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 5);
     }
   };
 
@@ -26,16 +28,24 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
     const container = scrollContainerRef.current;
     if (container) {
       container.addEventListener('scroll', checkScroll);
-      // Ejecutar una vez al inicio
+      // Verificación inicial
       checkScroll();
-      return () => container.removeEventListener('scroll', checkScroll);
+      
+      // Volver a verificar si cambia el tamaño de la ventana
+      window.addEventListener('resize', checkScroll);
+      
+      return () => {
+        container.removeEventListener('scroll', checkScroll);
+        window.removeEventListener('resize', checkScroll);
+      };
     }
   }, [products]);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const { clientWidth } = scrollContainerRef.current;
-      const scrollAmount = clientWidth * 0.8;
+      // Desplazamiento de una página completa (ancho del contenedor visible)
+      const scrollAmount = clientWidth; 
       const scrollTo = direction === 'left' 
         ? scrollContainerRef.current.scrollLeft - scrollAmount 
         : scrollContainerRef.current.scrollLeft + scrollAmount;
@@ -45,16 +55,16 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
   };
 
   return (
-    <section className="py-20 bg-zinc-950 overflow-hidden select-none">
+    <section className="py-20 bg-zinc-950 overflow-hidden select-none border-y border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-end justify-between mb-12">
           <div className="animate-in fade-in slide-in-from-left-4 duration-700">
             <div className="flex items-center gap-3 mb-3">
               <span className="h-1 w-8 bg-orange-600 rounded-full"></span>
-              <span className="text-orange-500 font-black text-[10px] uppercase tracking-[0.4em]">Selección Premium</span>
+              <span className="text-orange-500 font-black text-[10px] uppercase tracking-[0.4em]">Tendencias</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter">
-              Los Más <span className="text-orange-600">Elegidos.</span>
+              Los Más <span className="text-orange-600">Vendidos.</span>
             </h2>
           </div>
           
@@ -65,7 +75,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
               className={`w-14 h-14 rounded-2xl border flex items-center justify-center transition-all duration-300 active:scale-90 ${
                 showLeftArrow 
                 ? 'border-zinc-700 text-white hover:bg-orange-600 hover:border-orange-600 shadow-lg shadow-orange-600/0 hover:shadow-orange-600/20' 
-                : 'border-zinc-800 text-zinc-700 cursor-not-allowed opacity-30'
+                : 'border-zinc-800 text-zinc-800 cursor-not-allowed opacity-20'
               }`}
               aria-label="Anterior"
             >
@@ -79,7 +89,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
               className={`w-14 h-14 rounded-2xl border flex items-center justify-center transition-all duration-300 active:scale-90 ${
                 showRightArrow 
                 ? 'border-zinc-700 text-white hover:bg-orange-600 hover:border-orange-600 shadow-lg shadow-orange-600/0 hover:shadow-orange-600/20' 
-                : 'border-zinc-800 text-zinc-700 cursor-not-allowed opacity-30'
+                : 'border-zinc-800 text-zinc-700 cursor-not-allowed opacity-20'
               }`}
               aria-label="Siguiente"
             >
@@ -98,7 +108,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
           {products.map((product) => (
             <div 
               key={product.id} 
-              className="min-w-[280px] sm:min-w-[320px] md:min-w-[380px] snap-start transition-transform duration-500 hover:scale-[1.02]"
+              className="min-w-[280px] sm:min-w-[320px] md:min-w-[380px] snap-start transition-transform duration-500"
             >
               <ProductCard 
                 product={product} 
@@ -107,7 +117,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
               />
             </div>
           ))}
-          {/* Espaciador final para permitir scroll completo */}
+          {/* Espaciador final para permitir scroll completo y alineación */}
           <div className="min-w-[1px] h-full shrink-0"></div>
         </div>
       </div>
