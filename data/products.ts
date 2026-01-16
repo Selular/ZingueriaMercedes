@@ -463,7 +463,7 @@ export const products: Product[] = [
   },
    {
     id: 'l-30',
-    name: 'Nº 5 ',
+    name: 'Puerta para Hogar Nº 5 ',
     price: 531180.00,
     category: Category.PUERTAS,
     brand: Brand.LEPEN,
@@ -478,7 +478,7 @@ export const products: Product[] = [
   },
    {
     id: 'l-31',
-    name: 'Nº 6 ',
+    name: 'Puerta para Hogar Nº 6 ',
     price: 746680.00,
     category: Category.PUERTAS,
     brand: Brand.LEPEN,
@@ -494,7 +494,7 @@ export const products: Product[] = [
   },
    {
     id: 'l-32',
-    name: 'Nº 4 Con Horno ',
+    name: 'Puerta para hogar Nº 4 Con Horno ',
     price: 1490790.00,
     category: Category.CASSETTES,
     brand: Brand.LEPEN,

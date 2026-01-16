@@ -44,14 +44,14 @@ const AIAssistant: React.FC = () => {
           {/* Header del Chat */}
           <div className="bg-black text-white p-6 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 flex items-center justify-center font-black text-2xl italic text-[#F97316] drop-shadow-[0_0_10px_rgba(249,115,22,0.4)]">
+              <div className="w-10 h-10 flex items-center justify-center font-black text-2xl text-[#F97316] drop-shadow-[0_0_10px_rgba(249,115,22,0.4)]">
                 ZM
               </div>
               <div>
-                <p className="font-bold text-sm tracking-tight leading-none mb-1">Asesoría Mercedes</p>
+                <p className="font-bold text-sm tracking-tight leading-none mb-1">Asesoría Zinguería Mercedes</p>
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                  <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-[0.1em]">Experto Online</span>
+                  <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-[0.1em]">Online</span>
                 </div>
               </div>
             </div>
