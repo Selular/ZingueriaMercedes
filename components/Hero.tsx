@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center transition-all duration-700 blur-md scale-110"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2000&auto=format&fit=crop')",
+            backgroundImage: "url('fotos/fotofondo.png')",
             opacity: 0.6
           }}
         />
