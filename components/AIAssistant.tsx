@@ -133,12 +133,12 @@ const AIAssistant: React.FC = () => {
       ) : (
         <button 
           onClick={() => setIsOpen(true)}
-          className="bg-black text-white w-18 h-18 rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.3)] transition-all hover:scale-110 active:scale-95 group flex items-center justify-center relative border-4 border-white"
+          className="bg-black text-white w-18 h-18 rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.3)] transition-all hover:scale-110 active:scale-95 group flex items-center justify-center relative border-4 "
         >
           <svg className="w-8 h-8 text-white group-hover:text-orange-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
           </svg>
-          <span className="absolute -top-1 -right-1 w-5 h-5 bg-orange-600 rounded-full border-2 border-white animate-pulse"></span>
+          <span className="absolute -top-1 -right-1 w-5 h-5 bg-orange-600 rounded-full border-2 animate-pulse"></span>
         </button>
       )}
     </div>
