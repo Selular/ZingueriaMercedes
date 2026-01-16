@@ -42,7 +42,7 @@ const App: React.FC = () => {
     }
   };
 
-  // Efecto para scrollear al catálogo cuando se busca algo
+  /*scrollcito*/
   useEffect(() => {
     if (searchQuery.length > 0) {
       scrollToSection('catalog-start');

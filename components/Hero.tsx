@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black">
-      {/* Contenedor de la imagen con desenfoque */}
+      
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 bg-cover bg-center transition-all duration-700 blur-md scale-110"
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
               onClick={scrollToProducts}
               className="bg-[#F97316] hover:bg-orange-600 text-white font-black uppercase tracking-[0.2em] px-12 py-5 rounded-lg transition-all active:scale-95 text-xs shadow-xl shadow-orange-600/30"
             >
-              VER CATÁLOGO
+              VER CATÁLOGO 
             </button>
             <button 
               onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
