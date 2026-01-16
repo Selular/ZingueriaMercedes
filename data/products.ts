@@ -759,7 +759,7 @@ export const products: Product[] = [
     price: 1620590.00,
     category: Category.PARRILLAS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/ParrillaArgento.png',
+    imageUrl: 'fotos/ParrilaArgento.png',
     isBestSeller: false,
     specs: [
    
