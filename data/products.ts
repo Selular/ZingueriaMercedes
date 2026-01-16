@@ -48,7 +48,7 @@ export const products: Product[] = [
   {
     id: 'l-03',
     name: 'Moquehue 20000 ',
-    price: 596190300,
+    price: 596190.00,
     installments: 3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
@@ -431,161 +431,298 @@ export const products: Product[] = [
   },
    {
     id: 'l-28',
-    name: 'Nº 3 ',
+    name: 'Puerta Para Hogar Nº 3 ',
     price: 384280.00,
     installments:3&6,
-    category: Category.CALEFACCION,
+    category: Category.PUERTAS,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/n3.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
-    { label: 'Potencia', value: '11000 kcal/h' },
-    { label: 'Ambiente', value: 'Hasta 70m2' },
-    { label: 'Alto', value: '74 cm' },
-    { label: 'Ancho', value: '52,5 cm' },
-    { label: 'Profundidad', value: '43,5 cm' }
+    { label: 'Alto', value: '59,8 cm' },
+    { label: 'Ancho', value: '91,5 cm' },
+    { label: 'Profundidad', value: '12' }
     ],
   },
    {
     id: 'l-29',
-    name: 'Nº 4 ',
-    price: 596.190,
-    category: Category.CALEFACCION,
+    name: 'Puerta Para Hogar Nº 4 ',
+    price: 477680.00,
+    category: Category.PUERTAS,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/n4.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+
+    { label: 'Alto', value: '65,8 cm' },
+    { label: 'Ancho', value: '101,5 cm' },
+    { label: 'Profundidad', value: '12 cm' }
+    ],
   },
    {
     id: 'l-30',
     name: 'Nº 5 ',
-    price: 596.190,
-    category: Category.CALEFACCION,
+    price: 531180.00,
+    category: Category.PUERTAS,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/n5H.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+    { label: 'Alto', value: '65,8 cm' },
+    { label: 'Ancho', value: '112,6 cm' },
+    { label: 'Profundidad', value: '12 cm' }
+    ],
   },
    {
     id: 'l-31',
     name: 'Nº 6 ',
-    price: 596.190,
-    category: Category.CALEFACCION,
+    price: 746680.00,
+    category: Category.PUERTAS,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/n6.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+
+    { label: 'Alto', value: '75,7 cm' },
+    { label: 'Ancho', value: '132,1 cm' },
+    { label: 'Profundidad', value: '12 cm' }
+    ],
   },
    {
     id: 'l-32',
     name: 'Nº 4 Con Horno ',
-    price: 596.190,
-    category: Category.CALEFACCION,
+    price: 1490790.00,
+    category: Category.CASSETTES,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/n4H.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+    { label: 'Calorias', value: '27000 cal'},  
+    { label: 'Alto', value: '86 cm' },
+    { label: 'Ancho', value: '94 cm' },
+    { label: 'Profundidad', value: '52,5 cm' }
+    ],
   },
    {
     id: 'l-33',
-    name: 'Nº 5 Con Horno',
-    price: 596.190,
-    category: Category.CALEFACCION,
+    name: 'Cassette Nº 5 Con Horno',
+    price: 1595890.00,
+    category: Category.CASSETTES,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/n5H.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+    { label: 'Calorias', value: '30000 cal'},  
+    { label: 'Alto', value: '86 cm' },
+    { label: 'Ancho', value: '105 cm' },
+    { label: 'Profundidad', value: '52,8 cm' }
+    ],
   },
  
    {
     id: 'l-34',
     name: 'Central 15000 ',
-    price: 596.190,
-    category: Category.CALEFACCION,
+    price: 813590.00,
+    category: Category.CENTRALES,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/15000C.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+    { label: 'Calorias', value: '15000 cal'}, 
+    { label: 'Ambiente', value: 'Hasta 120m2' }, 
+    { label: 'Alto', value: '65,5 cm' },
+    { label: 'Ancho', value: '61 cm' },
+    { label: 'Profundidad', value: '51 cm' }
+    ],
   },
+  
   {
     id: 'l-35',
-    name: 'Central 20000 ',
-    price: 596.190,
-    category: Category.CALEFACCION,
+    name: 'Central De 20000 ',
+    price: 951790.00,
+    category: Category.CENTRALES,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/20000C.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+    { label: 'Calorias', value: '20000 cal'}, 
+    { label: 'Ambiente', value: 'Hasta 150m2' }, 
+    { label: 'Alto', value: '65,2 cm' },
+    { label: 'Ancho', value: '71 cm' },
+    { label: 'Profundidad', value: '51 cm' }
+    ],
   },
   {
     id: 'l-36',
-    name: 'Central 25000 ',
-    price: 596.190,
-    category: Category.CALEFACCION,
+    name: 'Central de 25000 ',
+    price: 1100390.00,
+    category: Category.CENTRALES,
     brand: Brand.LEPEN,
     imageUrl: './fotos/3.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+    { label: 'Calorias', value: '25000 cal'}, 
+    { label: 'Ambiente', value: 'Hasta 160m2' }, 
+    { label: 'Alto', value: '65,5 cm' },
+    { label: 'Ancho', value: '81 cm' },
+    { label: 'Profundidad', value: '51 cm' }
+    ],
   },
   {
     id: 'l-37',
-    name: 'Central 30000 ',
-    price: 596.190,
-    category: Category.CALEFACCION,
+    name: 'Central de 30000 ',
+    price: 1206190.00,
+    category: Category.CENTRALES,
     brand: Brand.LEPEN,
     imageUrl: './fotos/3.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+    { label: 'Calorias', value: '30000 cal'}, 
+    { label: 'Ambiente', value: 'Hasta 170m2' }, 
+    { label: 'Alto', value: '65,5 cm' },
+    { label: 'Ancho', value: '91 cm' },
+    { label: 'Profundidad', value: '51 cm' }
+    ],
   },
   {
     id: 'l-38',
-    name: 'Central 39000 ',
-    price: 596190,
-    category: Category.CALEFACCION,
+    name: 'Central de 39000 ',
+    price: 1703690.00,
+    category: Category.CENTRALES,
     brand: Brand.LEPEN,
     imageUrl: './fotos/3.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+    { label: 'Calorias', value: '39000 cal'}, 
+    { label: 'Ambiente', value: 'Hasta 190m2' }, 
+    { label: 'Alto', value: '75 cm' },
+    { label: 'Ancho', value: '119,5 cm' },
+    { label: 'Profundidad', value: '60 cm' }
+    ],
   },
   {
     id: 'l-39',
     name: 'Four Face ',
-    price: 596.190,
-    category: Category.CALEFACCION,
+    price: 1808990.00,
+    category: Category.CENTRALES,
     brand: Brand.LEPEN,
     imageUrl: '',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+    { label: 'Calorias', value: '30000 cal'}, 
+    { label: 'Ambiente', value: 'Hasta 180m2' }, 
+    { label: 'Alto', value: '140 cm' },
+    { label: 'Ancho', value: '77 cm' },
+    { label: 'Profundidad', value: '80 cm' }
+    ],
   },
- {
-    id: 'l-40',
-    name: 'Horno Para Empotrar ',
-    price: 596.190,
-    category: Category.CALEFACCION,
-    brand: Brand.LEPEN,
-    imageUrl: 'fotos/hornoParaEm.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
-  },
+ 
  {
     id: 'l-41',
     name: 'Horno Doble Cámara ',
-    price: 596.190,
+    price: 936790.00,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/HDobleCamara.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+  
+    { label: 'Alto', value: '85 cm' },
+    { label: 'Ancho', value: '69,5 cm' },
+    { label: 'Profundidad', value: '77,5 cm' }
+    ],
   },
  {
     id: 'l-42',
     name: 'Horno Familiar',
-    price: 596.190,
+    price: 679790.00,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/Moquehue13500horno.png',
-    features: ['20000 kcal/h', 'Refractarios de alta calidad', 'Manija fría'],
-    isBestSeller: true
+    features: ['Vidrio vitrocerámico'],
+    isBestSeller: false,
+    specs: [
+    { label: 'Alto', value: '60 cm' },
+    { label: 'Ancho', value: '53 cm' },
+    { label: 'Profundidad', value: '60 cm' }
+    ],
   },
+   {
+    id: 'l-43',
+    name: 'Mesa Para Horno Familiar',
+    price: 124790.00,
+    category: Category.ACCESORIOS,
+    brand: Brand.LEPEN,
+    imageUrl: 'fotos/mesa1.png',
+    isBestSeller: false,
+    specs: [
+    { label: 'Alto', value: '53 cm' },
+    { label: 'Ancho', value: '60 cm' },
+    { label: 'Profundidad', value: '60 cm' }
+    ],
+  },
+
+  {
+    id: 'l-44',
+    name: 'Hornos Pizzeros',
+    price: ,
+    category: Category.HORNOS,
+    brand: Brand.LEPEN,
+    imageUrl: 'fotos/HornoPizzero.png',
+    isBestSeller: false,
+    specs: [
+    { label: 'Alto', value: '65,5 cm' },
+    { label: 'Ancho', value: '81 cm' },
+    { label: 'Profundidad', value: '51 cm' }
+    ],
+  },
+
+   {
+    id: 'l-45',
+    name: 'Cocina',
+    price: 1077490.00,
+    category: Category.COCINA,
+    brand: Brand.LEPEN,
+    imageUrl: 'fotos/Cocina.png',
+    isBestSeller: false,
+    specs: [
+    { label: 'Alto', value: '85 cm' },
+    { label: 'Ancho', value: '89 cm' },
+    { label: 'Profundidad', value: '58,5 cm' }
+    ],
+  },
+
+  {
+    id: 'l-46',
+    name: 'Cocina New Cook',
+    price: 1620590.00,
+    category: Category.COCINA,
+    brand: Brand.LEPEN,
+    imageUrl: 'fotos/CocinaNewCook.png',
+    isBestSeller: false,
+    specs: [
+     
+    { label: 'Ambiente', value: 'Hasta 70m2' }, 
+    { label: 'Alto', value: '79,5 cm' },
+    { label: 'Ancho', value: '104 cm' },
+    { label: 'Profundidad', value: '57 cm' }
+    ],
+  },
+
+  
+  
+  
 ];
