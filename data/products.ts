@@ -677,16 +677,16 @@ export const products: Product[] = [
 
   {
     id: 'l-44',
-    name: 'Hornos Pizzeros',
-    price: ,
+    name: 'Horno Pizzero',
+    price: 65690.00,
     category: Category.HORNOS,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/HornoPizzero.png',
     isBestSeller: false,
     specs: [
-    { label: 'Alto', value: '65,5 cm' },
-    { label: 'Ancho', value: '81 cm' },
-    { label: 'Profundidad', value: '51 cm' }
+    { label: 'Alto', value: '12cm' },
+    { label: 'Ancho', value: '49 cm' },
+    { label: 'Profundidad', value: '36 cm' }
     ],
   },
 

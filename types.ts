@@ -2,7 +2,7 @@
 export enum Category {
   CALEFACCION = 'Calefacción',
   CASSETTES = 'Cassettes',
-  COCINA = 'Cocina & Parrillas',
+  COCINA = 'Cocinas',
   PUERTAS = 'Puertas',
   CENTRALES = 'Centrales',
   ZINGUERIA = 'Zinguería',
