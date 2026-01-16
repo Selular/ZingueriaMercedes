@@ -13,7 +13,7 @@ export const products: Product[] = [
     brand: Brand.LEPEN,
     imageUrl: '/fotos/Moquehue9000.png',
     features: [ 'Vidrio vitrocerámico', 'Cajón cenicero','Doble combustión'],
-    isBestSeller: false,
+    isBestSeller: true,
     specs: [
     { label: 'Potencia', value: '9000 kcal/h' },
     { label: 'Ambiente', value: 'Hasta 70m2' },
@@ -34,7 +34,7 @@ export const products: Product[] = [
     brand: Brand.LEPEN,
     imageUrl: '/fotos/Moquehue13900 .png',
     features: [ 'Cajón cenicero','Vidrio vitrocerámico'],
-    isBestSeller: false,
+    isBestSeller: true,
     specs: [
     { label: 'Potencia', value: '139000 kcal/h' },
     { label: 'Ambiente', value: 'Hasta 100m2' },
@@ -73,7 +73,7 @@ export const products: Product[] = [
     brand: Brand.LEPEN,
     imageUrl: '/fotos/Rond7000.png',
     features: [ 'Vidrio vitrocerámico'],
-    isBestSeller: false,
+    isBestSeller: true,
     specs: [
     { label: 'Potencia', value: '7000 kcal/h' },
     { label: 'Ambiente', value: 'Hasta 50m2' },
@@ -637,7 +637,7 @@ export const products: Product[] = [
     brand: Brand.LEPEN,
     imageUrl: 'fotos/HDobleCamara.png',
     features: ['Vidrio vitrocerámico'],
-    isBestSeller: false,
+    isBestSeller: true,
     specs: [
   
     { label: 'Alto', value: '85 cm' },
@@ -667,7 +667,7 @@ export const products: Product[] = [
     category: Category.ACCESORIOS,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/mesa1.png',
-    isBestSeller: false,
+    isBestSeller: true,
     specs: [
     { label: 'Alto', value: '53 cm' },
     { label: 'Ancho', value: '60 cm' },
@@ -728,7 +728,7 @@ export const products: Product[] = [
     category: Category.PARRILLAS,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/Barbacoa.png',
-    isBestSeller: false,
+    isBestSeller: true,
     specs: [
     
     { label: 'Alto', value: '111,5 cm' },
@@ -760,7 +760,7 @@ export const products: Product[] = [
     category: Category.PARRILLAS,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/ParrilaArgento.png',
-    isBestSeller: false,
+    isBestSeller: true,
     specs: [
    
     { label: 'Alto', value: '56,7 cm' },
@@ -805,7 +805,7 @@ export const products: Product[] = [
     category: Category.FOGONES,
     brand: Brand.LEPEN,
     imageUrl: 'fotos/FogoneroCircular.png',
-    isBestSeller: false,
+    isBestSeller: true,
     specs: [
    
     { label: 'Alto', value: '39 cm' },
