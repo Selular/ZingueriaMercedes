@@ -1,5 +1,5 @@
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Product } from '../types';
 import ProductCard from './ProductCard';
 
@@ -11,40 +11,26 @@ interface BestSellersProps {
 
 const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSelectProduct }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  // Duplicamos los productos para dar la sensación de carrusel continuo al scrollear
-  const displayProducts = [...products, ...products, ...products];
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
 
   const checkScroll = () => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      setCanScrollLeft(scrollLeft > 10);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-
-      // Si llegamos cerca del final o del inicio, reseteamos la posición al centro
-      // para simular infinitud
-      const oneThird = scrollWidth / 3;
-      if (scrollLeft > oneThird * 2) {
-        scrollContainerRef.current.scrollLeft = scrollLeft - oneThird;
-      } else if (scrollLeft < oneThird - clientWidth) {
-        scrollContainerRef.current.scrollLeft = scrollLeft + oneThird;
-      }
+      setShowLeftArrow(scrollLeft > 20);
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 20);
     }
   };
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (container) {
-      // Empezar en la sección del medio para que se pueda ir a la izquierda desde el inicio
-      const middle = container.scrollWidth / 3;
-      container.scrollLeft = middle;
-      
       container.addEventListener('scroll', checkScroll);
+      // Ejecutar una vez al inicio
+      checkScroll();
       return () => container.removeEventListener('scroll', checkScroll);
     }
-  }, []);
+  }, [products]);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -59,30 +45,46 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
   };
 
   return (
-    <section className="py-16 bg-zinc-900 overflow-hidden select-none">
+    <section className="py-20 bg-zinc-950 overflow-hidden select-none">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-end justify-between mb-10">
-          <div>
-            <span className="text-orange-500 font-black text-xs uppercase tracking-widest mb-2 block">Tendencias</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white">Los Más <span className="text-orange-600">Vendidos.</span></h2>
+        <div className="flex items-end justify-between mb-12">
+          <div className="animate-in fade-in slide-in-from-left-4 duration-700">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="h-1 w-8 bg-orange-600 rounded-full"></span>
+              <span className="text-orange-500 font-black text-[10px] uppercase tracking-[0.4em]">Selección Premium</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter">
+              Los Más <span className="text-orange-600">Elegidos.</span>
+            </h2>
           </div>
-          <div className="flex gap-3">
+          
+          <div className="flex gap-4">
             <button 
               onClick={() => scroll('left')}
-              className="w-12 h-12 rounded-full border border-zinc-700 flex items-center justify-center text-white hover:bg-orange-600 hover:border-orange-600 transition-all active:scale-90"
+              disabled={!showLeftArrow}
+              className={`w-14 h-14 rounded-2xl border flex items-center justify-center transition-all duration-300 active:scale-90 ${
+                showLeftArrow 
+                ? 'border-zinc-700 text-white hover:bg-orange-600 hover:border-orange-600 shadow-lg shadow-orange-600/0 hover:shadow-orange-600/20' 
+                : 'border-zinc-800 text-zinc-700 cursor-not-allowed opacity-30'
+              }`}
               aria-label="Anterior"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <button 
               onClick={() => scroll('right')}
-              className="w-12 h-12 rounded-full border border-zinc-700 flex items-center justify-center text-white hover:bg-orange-600 hover:border-orange-600 transition-all active:scale-90"
+              disabled={!showRightArrow}
+              className={`w-14 h-14 rounded-2xl border flex items-center justify-center transition-all duration-300 active:scale-90 ${
+                showRightArrow 
+                ? 'border-zinc-700 text-white hover:bg-orange-600 hover:border-orange-600 shadow-lg shadow-orange-600/0 hover:shadow-orange-600/20' 
+                : 'border-zinc-800 text-zinc-700 cursor-not-allowed opacity-30'
+              }`}
               aria-label="Siguiente"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
@@ -90,11 +92,14 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
 
         <div 
           ref={scrollContainerRef}
-          className="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-8 cursor-grab active:cursor-grabbing"
+          className="flex gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-10 cursor-grab active:cursor-grabbing"
           style={{ scrollBehavior: 'smooth' }}
         >
-          {displayProducts.map((product, idx) => (
-            <div key={`${product.id}-${idx}`} className="min-w-[300px] md:min-w-[350px] snap-start">
+          {products.map((product) => (
+            <div 
+              key={product.id} 
+              className="min-w-[280px] sm:min-w-[320px] md:min-w-[380px] snap-start transition-transform duration-500 hover:scale-[1.02]"
+            >
               <ProductCard 
                 product={product} 
                 onAddToCart={() => onAddToCart(product)} 
@@ -102,6 +107,8 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
               />
             </div>
           ))}
+          {/* Espaciador final para permitir scroll completo */}
+          <div className="min-w-[1px] h-full shrink-0"></div>
         </div>
       </div>
 
