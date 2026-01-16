@@ -14,7 +14,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onClick
     currency: 'ARS',
   }).format(product.price);
 
-  // Simulamos un recargo por interés (aprox 30% para 6 cuotas)
   const cuota6 = new Intl.NumberFormat('es-AR', { 
     style: 'currency', 
     currency: 'ARS' 

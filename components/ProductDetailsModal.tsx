@@ -30,16 +30,16 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
 
   return (
     <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 sm:p-6 lg:p-10">
-      {/* Overlay con desenfoque */}
+      {/* Overlay con desenfoquecito */}
       <div 
         className="absolute inset-0 bg-black/90 backdrop-blur-md transition-opacity duration-300" 
         onClick={onClose} 
       />
       
-      {/* Contenedor Principal */}
+      {/* Contenedor pprincipal */}
       <div className="relative w-full max-w-6xl h-full max-h-[90vh] md:h-auto md:max-h-[85vh] bg-white rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row">
         
-        {/* Botón Cerrar */}
+        {/* Botón para Cerrar */}
         <button 
           onClick={onClose} 
           className="absolute top-6 right-6 z-[160] flex items-center justify-center w-10 h-10 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 rounded-full transition-all active:scale-90 shadow-md"
@@ -66,7 +66,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
           </div>
         </div>
 
-        {/* Sección de Información */}
+        {/* Sección de la info */}
         <div className="flex-1 flex flex-col min-h-0 bg-white">
           <div className="flex-1 overflow-y-auto p-6 md:p-12 lg:p-14 custom-scrollbar">
             <div className="max-w-2xl">
@@ -79,7 +79,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
                 {product.name}
               </h2>
 
-              {/* Opciones de Cuotas con Interés */}
+              {/* Opciones de cuotas con interés */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <div className="bg-zinc-100 p-5 rounded-2xl border border-zinc-200 flex flex-col relative overflow-hidden">
                    <span className="text-zinc-400 text-[8px] font-black uppercase tracking-[0.2em] mb-1">Financiación</span>
@@ -93,7 +93,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
                 </div>
               </div>
 
-              {/* Especificaciones Técnicas */}
+              {/* Especificaciones técnicas */}
               {product.specs && (
                 <div className="grid grid-cols-2 gap-3 mb-8">
                   {product.specs.map((spec, idx) => (
@@ -121,7 +121,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
             </div>
           </div>
 
-          {/* Footer del Modal (Fijado abajo) */}
+          {/* Footer fijado */}
           <div className="p-6 md:p-10 border-t border-zinc-100 bg-zinc-50 flex flex-col sm:flex-row items-center justify-between gap-6 shrink-0">
             <div className="text-center sm:text-left">
               <p className="text-zinc-400 text-[9px] font-black uppercase tracking-widest mb-1">Precio Pago Contado</p>

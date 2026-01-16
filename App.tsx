@@ -1,5 +1,5 @@
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Category, Brand, Product, CartItem } from './types';
 import { products } from './data/products';
 import Navbar from './components/Navbar';
@@ -23,13 +23,31 @@ const App: React.FC = () => {
     return products.filter(p => {
       const matchCategory = selectedCategory === 'Todos' || p.category === selectedCategory;
       const matchBrand = selectedBrand === 'Todos' || p.brand === selectedBrand;
-      const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ;
-                         
+      const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
       return matchCategory && matchBrand && matchSearch;
     });
   }, [selectedCategory, selectedBrand, searchQuery]);
 
   const bestSellers = useMemo(() => products.filter(p => p.isBestSeller), []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  };
+
+  // Efecto para scrollear al catálogo cuando se busca algo
+  useEffect(() => {
+    if (searchQuery.length > 0) {
+      scrollToSection('catalog-start');
+    }
+  }, [searchQuery]);
 
   const addToCart = (product: Product) => {
     setCart(prev => {
@@ -56,18 +74,6 @@ const App: React.FC = () => {
     }));
   };
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-zinc-50 flex flex-col scroll-smooth">
       <Navbar 
@@ -77,15 +83,12 @@ const App: React.FC = () => {
         setSearchQuery={setSearchQuery}
       />
       
-      {/* 1. HERO */}
       <Hero />
 
-      {/* 2. HIGHLIGHTS */}
       <div id="best-sellers">
         <BestSellers products={bestSellers} onAddToCart={addToCart} onSelectProduct={setSelectedProduct} />
       </div>
       
-      {/* 3. CATALOG */}
       <div id="catalog-start" className="max-w-7xl mx-auto px-6 py-24 w-full">
         <div className="flex flex-col lg:flex-row gap-16">
           
@@ -102,9 +105,14 @@ const App: React.FC = () => {
                 <span className="h-px w-12 bg-[#F97316]"></span>
                 <span className="text-[11px] font-black text-[#F97316] uppercase tracking-[0.5em]">Nuestros Productos</span>
               </div>
-              <h2 className="text-5xl md:text-6xl font-black text-zinc-900 tracking-tight leading-none mb-8">
-                {selectedCategory === 'Todos' ? 'Catálogo Completo' : selectedCategory}
-              </h2>
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <h2 className="text-5xl md:text-6xl font-black text-zinc-900 tracking-tight leading-none">
+                  {selectedCategory === 'Todos' ? 'Catálogo' : selectedCategory}
+                </h2>
+                {searchQuery && (
+                  <p className="text-zinc-400 font-medium">Resultados para: <span className="text-black font-bold">"{searchQuery}"</span></p>
+                )}
+              </div>
             </header>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10">
@@ -127,7 +135,7 @@ const App: React.FC = () => {
                     setSelectedBrand('Todos');
                     setSearchQuery('');
                   }}
-                  className="mt-10 bg-black text-white px-8 py-3 rounded-xl font-bold hover:bg-[#F97316]"
+                  className="mt-10 bg-black text-white px-8 py-3 rounded-xl font-bold hover:bg-[#F97316] transition-colors"
                 >
                   Restablecer filtros
                 </button>
@@ -153,14 +161,11 @@ const App: React.FC = () => {
 
       <AIAssistant />
 
-      {/* FOOTER ACTUALIZADO SEGÚN IMAGEN */}
       <footer className="bg-black text-white pt-20 pb-12 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
-          
-          {/* Columna 1: Branding */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <span className="text-4xl font-black text-[#F97316]">ZM</span>
+              <span className="text-4xl font-black text-[#F97316] italic">ZM</span>
               <h2 className="text-2xl font-bold">
                 Zinguería <span className="text-[#F97316]">Mercedes</span>
               </h2>
@@ -168,17 +173,8 @@ const App: React.FC = () => {
             <p className="text-zinc-400 text-sm leading-relaxed max-w-xs">
               Llevamos el calor a tu hogar con la pasión y el profesionalismo que nos caracteriza. Distribución oficial y zinguería de alta gama.
             </p>
-            <div className="flex gap-4 pt-2">
-              <a href="https://www.instagram.com/zingueria_mercedes/" target="_blank" rel="noreferrer" className="text-white hover:text-[#F97316] transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </a>
-            
-            </div>
           </div>
 
-          {/* Columna 2: Navegación */}
           <div className="space-y-8">
             <h3 className="text-[#F97316] font-black text-xs uppercase tracking-[0.3em] border-b-2 border-[#F97316] w-fit pb-1">
               NAVEGACIÓN
@@ -186,11 +182,10 @@ const App: React.FC = () => {
             <ul className="space-y-4 text-zinc-300 text-sm">
               <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors">Inicio</button></li>
               <li><button onClick={() => scrollToSection('catalog-start')} className="hover:text-white transition-colors">Catálogo Completo</button></li>
-              <li><button onClick={() => scrollToSection('best-sellers')} className="hover:text-white transition-colors">Ofertas Destacadas</button></li>
+              <li><button onClick={() => scrollToSection('best-sellers')} className="hover:text-white transition-colors">Más Vendidos</button></li>
             </ul>
           </div>
 
-          {/* Columna 3: Atención */}
           <div className="space-y-8">
             <h3 className="text-[#F97316] font-black text-xs uppercase tracking-[0.3em]">
               ATENCIÓN
@@ -203,7 +198,7 @@ const App: React.FC = () => {
                 </svg>
                 <div>
                   <p className="font-bold text-white mb-1">¿Dónde estamos?</p>
-                  <p className="text-zinc-400 text-xs leading-relaxed">Encontranos en la 101 y 30bis<br />n°732, Mercedes Bs. As</p>
+                  <p className="text-zinc-400 text-xs leading-relaxed">Calle 101 y 30bis n°732<br />Mercedes, Buenos Aires</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -211,7 +206,7 @@ const App: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <div>
-                  <p className="font-bold text-white mb-1">WhatsApp Directo</p>
+                  <p className="font-bold text-white mb-1">WhatsApp</p>
                   <p className="text-zinc-400 text-xs font-bold">+54 9 2324 69-9889</p>
                 </div>
               </div>

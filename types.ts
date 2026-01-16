@@ -28,7 +28,7 @@ export interface Product {
   id: string;
   name: string;
   price: number;
-  installments?: number; // Cantidad de cuotas (ej: 12)
+  installments?: number; // Cantidad de cuotas TODAVÍA TENGO Q VER METODO
   category: Category;
   brand: Brand;
   imageUrl: string;
