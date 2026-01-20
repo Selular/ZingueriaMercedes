@@ -17,6 +17,10 @@ const App: React.FC = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  
+  // Estado para la paginación (Ver más)
+  const PRODUCTS_PER_PAGE = 6;
+  const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_PAGE);
 
   const filteredProducts = useMemo(() => {
     return products.filter(p => {
@@ -27,7 +31,17 @@ const App: React.FC = () => {
     });
   }, [selectedCategory, selectedBrand, searchQuery]);
 
+  // Productos que realmente se muestran según la paginación
+  const visibleProducts = useMemo(() => {
+    return filteredProducts.slice(0, visibleCount);
+  }, [filteredProducts, visibleCount]);
+
   const bestSellers = useMemo(() => products.filter(p => p.isBestSeller), []);
+
+  // Reiniciar el contador cuando cambian los filtros
+  useEffect(() => {
+    setVisibleCount(PRODUCTS_PER_PAGE);
+  }, [selectedCategory, selectedBrand, searchQuery]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -41,7 +55,6 @@ const App: React.FC = () => {
     }
   };
 
-  // Efecto para scrollear al catálogo cuando se busca algo
   useEffect(() => {
     if (searchQuery.length > 0) {
       scrollToSection('catalog-start');
@@ -71,6 +84,10 @@ const App: React.FC = () => {
       }
       return item;
     }));
+  };
+
+  const handleShowMore = () => {
+    setVisibleCount(prev => prev + PRODUCTS_PER_PAGE);
   };
 
   return (
@@ -105,9 +122,14 @@ const App: React.FC = () => {
                 <span className="text-[11px] font-black text-[#F97316] uppercase tracking-[0.5em]">Nuestros Productos</span>
               </div>
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <h2 className="text-5xl md:text-6xl font-black text-zinc-900 tracking-tight leading-none">
-                  {selectedCategory === 'Todos' ? 'Catálogo' : selectedCategory}
-                </h2>
+                <div>
+                  <h2 className="text-5xl md:text-6xl font-black text-zinc-900 tracking-tight leading-none mb-2">
+                    {selectedCategory === 'Todos' ? 'Catálogo' : selectedCategory}
+                  </h2>
+                  <p className="text-zinc-400 text-sm font-medium">
+                    Mostrando <span className="text-zinc-900 font-bold">{visibleProducts.length}</span> de <span className="text-zinc-900 font-bold">{filteredProducts.length}</span> productos
+                  </p>
+                </div>
                 {searchQuery && (
                   <p className="text-zinc-400 font-medium">Resultados para: <span className="text-black font-bold">"{searchQuery}"</span></p>
                 )}
@@ -115,7 +137,7 @@ const App: React.FC = () => {
             </header>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10">
-              {filteredProducts.map(product => (
+              {visibleProducts.map(product => (
                 <ProductCard 
                   key={product.id} 
                   product={product} 
@@ -124,6 +146,22 @@ const App: React.FC = () => {
                 />
               ))}
             </div>
+
+            {/* Botón Ver Más */}
+            {filteredProducts.length > visibleCount && (
+              <div className="mt-20 flex flex-col items-center">
+                <div className="w-full h-px bg-zinc-200 mb-10"></div>
+                <button 
+                  onClick={handleShowMore}
+                  className="group relative flex items-center justify-center gap-3 bg-black text-white px-12 py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-[#F97316] transition-all active:scale-95 shadow-2xl shadow-black/10"
+                >
+                  Ver más productos
+                  <svg className="w-4 h-4 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+              </div>
+            )}
 
             {filteredProducts.length === 0 && (
               <div className="flex flex-col items-center justify-center py-32 text-center bg-white rounded-[40px] border border-zinc-100 shadow-sm">
