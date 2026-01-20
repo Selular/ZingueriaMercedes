@@ -200,7 +200,7 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <span className="text-4xl font-black text-[#F97316] italic">ZM</span>
+              <span className="text-4xl font-black text-[#F97316] ">ZM</span>
               <h2 className="text-2xl font-bold">
                 Zinguería <span className="text-[#F97316]">Mercedes</span>
               </h2>
