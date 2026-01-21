@@ -32,7 +32,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: '/fotos/Moquehue13900 .png',
+    imageUrl: 'fotos/Lepen/Moquehue13900 .png',
     features: [ 'Cajón cenicero','Vidrio vitrocerámico'],
     isBestSeller: true,
     specs: [
@@ -52,7 +52,7 @@ export const products: Product[] = [
     installments: 3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: '/fotos/Moquehue20000.png',
+    imageUrl: '/fotos/Lepen/Moquehue20000.png',
     features: [ 'Cajón cenicero','Vidrio vitrocerámico' ],
     isBestSeller: false,
     specs: [
@@ -71,7 +71,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: '/fotos/Rond7000.png',
+    imageUrl: '/fotos/Lepen/Rond7000.png',
     features: [ 'Vidrio vitrocerámico'],
     isBestSeller: true,
     specs: [
@@ -90,7 +90,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: '/fotos/Rond7000ConHorno.png',
+    imageUrl: '/fotos/Lepen/Rond7000ConHorno.png',
     features: [ 'Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -108,7 +108,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: '/fotos/7000Premium.png',
+    imageUrl: '/fotos/Lepen/7000Premium.png',
     features: [ 'Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -127,7 +127,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: '/fotos/Moquehue8000.png',
+    imageUrl: '/fotos/Lepen/Moquehue8000.png',
     features: [ 'Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -146,7 +146,7 @@ export const products: Product[] = [
     installments:3&6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Moquehue13500.png',
+    imageUrl: 'fotos/Lepen/Moquehue13500.png',
     features: [ 'Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -165,7 +165,7 @@ export const products: Product[] = [
     installments:3&6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Moquehue13500horno.png',
+    imageUrl: 'fotos/Lepen/Moquehue13500horno.png',
     features: [ 'Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -183,7 +183,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/rinconero.png',
+    imageUrl: 'fotos/Lepen/rinconero.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -202,7 +202,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/11000premium.png',
+    imageUrl: 'fotos/Lepen/11000premium.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -220,7 +220,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/12000premiumConHorno.png',
+    imageUrl: 'fotos/Lepen/12000premiumConHorno.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -238,7 +238,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/14000AltaPremium.png',
+    imageUrl: 'fotos/Lepen/14000AltaPremium.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -257,7 +257,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/14000ConBasePremium.png',
+    imageUrl: 'fotos/Lepen/14000ConBasePremium.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -275,7 +275,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/15000Rinconero.png',
+    imageUrl: 'fotos/Lepen/15000Rinconero.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -293,7 +293,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/17000PremiumConHorno.png',
+    imageUrl: 'fotos/Lepen/17000PremiumConHorno.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -311,7 +311,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/19000premConHorno.png',
+    imageUrl: 'fotos/Lepen/19000premConHorno.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -329,7 +329,7 @@ export const products: Product[] = [
     installments: 3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/2000Prem.png',
+    imageUrl: 'fotos/Lepen/2000Prem.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -347,7 +347,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/27000.png',
+    imageUrl: 'fotos/Lepen/27000.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -365,7 +365,7 @@ export const products: Product[] = [
     installments:3&6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/27000RinconeroConHorno.png',
+    imageUrl: 'fotos/Lepen/27000RinconeroConHorno.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -384,7 +384,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Campana27000.png',
+    imageUrl: 'fotos/Lepen/Campana27000.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -403,7 +403,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.PUERTAS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/n1.png',
+    imageUrl: 'fotos/Lepen/n1.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -420,7 +420,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.PUERTAS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/n2.png',
+    imageUrl: 'fotos/Lepen/n2.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -436,7 +436,7 @@ export const products: Product[] = [
     installments:3&6,
     category: Category.PUERTAS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/n3.png',
+    imageUrl: 'fotos/Lepen/n3.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -451,7 +451,7 @@ export const products: Product[] = [
     price: 477680.00,
     category: Category.PUERTAS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/n4.png',
+    imageUrl: 'fotos/Lepen/n4.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -467,7 +467,7 @@ export const products: Product[] = [
     price: 531180.00,
     category: Category.PUERTAS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/n5H.png',
+    imageUrl: 'fotos/Lepen/n5H.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -482,7 +482,7 @@ export const products: Product[] = [
     price: 746680.00,
     category: Category.PUERTAS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/n6.png',
+    imageUrl: 'fotos/Lepen/n6.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -498,7 +498,7 @@ export const products: Product[] = [
     price: 1490790.00,
     category: Category.CASSETTES,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/n4H.png',
+    imageUrl: 'fotos/Lepen/n4H.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -514,7 +514,7 @@ export const products: Product[] = [
     price: 1595890.00,
     category: Category.CASSETTES,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/n5H.png',
+    imageUrl: 'fotos/Lepen/n5H.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -531,7 +531,7 @@ export const products: Product[] = [
     price: 813590.00,
     category: Category.CENTRALES,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/15000C.png',
+    imageUrl: 'fotos/Lepen/15000C.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -549,7 +549,7 @@ export const products: Product[] = [
     price: 951790.00,
     category: Category.CENTRALES,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/20000C.png',
+    imageUrl: 'fotos/Lepen/20000C.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -566,7 +566,7 @@ export const products: Product[] = [
     price: 1100390.00,
     category: Category.CENTRALES,
     brand: Brand.LEPEN,
-    imageUrl: './fotos/20000C.png',
+    imageUrl: './fotos/Lepen/20000C.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -583,7 +583,7 @@ export const products: Product[] = [
     price: 1206190.00,
     category: Category.CENTRALES,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Untitled (20).png',
+    imageUrl: 'fotos/Lepen/Untitled (20).png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -600,7 +600,7 @@ export const products: Product[] = [
     price: 1703690.00,
     category: Category.CENTRALES,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Untitled (20).png',
+    imageUrl: 'fotos/Lepen/Untitled (20).png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -617,7 +617,7 @@ export const products: Product[] = [
     price: 1808990.00,
     category: Category.CENTRALES,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/fourface.png',
+    imageUrl: 'fotos/Lepen/fourface.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -635,7 +635,7 @@ export const products: Product[] = [
     price: 936790.00,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/HDobleCamara.png',
+    imageUrl: 'fotos/Lepen/HDobleCamara.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: true,
     specs: [
@@ -651,7 +651,7 @@ export const products: Product[] = [
     price: 679790.00,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Moquehue13500horno.png',
+    imageUrl: 'fotos/Lepen/Moquehue13500horno.png',
     features: ['Vidrio vitrocerámico'],
     isBestSeller: false,
     specs: [
@@ -666,7 +666,7 @@ export const products: Product[] = [
     price: 124790.00,
     category: Category.ACCESORIOS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/mesa1.png',
+    imageUrl: 'fotos/Lepen/mesa1.png',
     isBestSeller: true,
     specs: [
     { label: 'Alto', value: '53 cm' },
@@ -681,7 +681,7 @@ export const products: Product[] = [
     price: 65690.00,
     category: Category.HORNOS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/HornoPizzero.png',
+    imageUrl: 'fotos/Lepen/HornoPizzero.png',
     isBestSeller: false,
     specs: [
     { label: 'Alto', value: '12cm' },
@@ -696,7 +696,7 @@ export const products: Product[] = [
     price: 1077490.00,
     category: Category.COCINA,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Cocina.png',
+    imageUrl: 'fotos/Lepen/Cocina.png',
     isBestSeller: false,
     specs: [
     { label: 'Alto', value: '85 cm' },
@@ -711,7 +711,7 @@ export const products: Product[] = [
     price: 1620590.00,
     category: Category.COCINA,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/CocinaNewCook.png',
+    imageUrl: 'fotos/Lepen/CocinaNewCook.png',
     isBestSeller: false,
     specs: [
      
@@ -727,7 +727,7 @@ export const products: Product[] = [
     price: 589990.00,
     category: Category.PARRILLAS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/Barbacoa.png',
+    imageUrl: 'fotos/Lepen/Barbacoa.png',
     isBestSeller: true,
     specs: [
     
@@ -743,7 +743,7 @@ export const products: Product[] = [
     price: 349900.00,
     category: Category.PARRILLAS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/FastFood.png',
+    imageUrl: 'fotos/Lepen/FastFood.png',
     isBestSeller: false,
     specs: [
      
@@ -759,7 +759,7 @@ export const products: Product[] = [
     price: 1620590.00,
     category: Category.PARRILLAS,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/ParrilaArgento.png',
+    imageUrl: 'fotos/Lepen/ParrilaArgento.png',
     isBestSeller: true,
     specs: [
    
@@ -774,7 +774,7 @@ export const products: Product[] = [
     price: 751690.00,
     category: Category.FOGONES,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/FogoneroParrilleroPremium.png',
+    imageUrl: 'fotos/Lepen/FogoneroParrilleroPremium.png',
     isBestSeller: false,
     specs: [
     { label: 'Patas Altas', value: '71 cm' },
@@ -789,7 +789,7 @@ export const products: Product[] = [
     price: 481390.00,
     category: Category.FOGONES,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/FogoneroWheels.png',
+    imageUrl: 'fotos/Lepen/FogoneroWheels.png',
     isBestSeller: false,
     specs: [
 
@@ -804,7 +804,7 @@ export const products: Product[] = [
     price: 388890.00,
     category: Category.FOGONES,
     brand: Brand.LEPEN,
-    imageUrl: 'fotos/FogoneroCircular.png',
+    imageUrl: 'fotos/Lepen/FogoneroCircular.png',
     isBestSeller: true,
     specs: [
    
