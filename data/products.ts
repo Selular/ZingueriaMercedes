@@ -868,7 +868,7 @@ export const products: Product[] = [
   price: 699900.00,
   category: Category.PARRILLAS,
   brand: Brand.VULE,
-  imageUrl: 'fotos/Vule/ParrillaMega.png',//VER
+  imageUrl: 'fotos/Vule/ParrillaMega.png',
   isBestSeller: false,
   specs: [
     { label: 'Alto', value: '111 cm' },
