@@ -817,7 +817,338 @@ export const products: Product[] = [
 
 
 
-  
+  /*VULE */
+
+
+  {
+  id: 'l-54',
+  name: 'Parrilla Nórdica',
+  price: 317179.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/ParrillaNórdica.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '104 cm' },
+    { label: 'Ancho', value: '97 cm' },
+    { label: 'Profundidad', value: '48 cm' }
+  ],
+},
+{
+  id: 'l-55',
+  name: 'Parrilla Eco Con Pala y Atizador',
+  price: 486612.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/ParrillaEco.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '115 cm' },
+    { label: 'Ancho', value: '105 cm' },
+    { label: 'Profundidad', value: '52 cm' }
+  ],
+},
+{
+  id: 'l-56',
+  name: 'Parrilla Polo',
+  price: 558456.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/ParrillaPolo.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '111 cm' },
+    { label: 'Ancho', value: '105 cm (70 cm guardada)' },
+    { label: 'Profundidad', value: '53 cm' }
+  ],
+},
+{
+  id: 'l-57',
+  name: 'Parrilla Mega',
+  price: 699900.00,
+  category: Category.PARRILLAS,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/ParrillaMega.png',//VER
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '111 cm' },
+    { label: 'Ancho', value: '130 cm' },
+    { label: 'Profundidad', value: '53 cm' }
+  ],
+},
+{
+  id: 'l-58',
+  name: 'Fogonero Gurú',
+  price: 438872.00,
+  category: Category.FOGONES,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/FogoneroGurú.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Diámetro', value: '80 cm' },
+    { label: 'Peso', value: '35 kg' },
+    { label: 'Incluye', value: 'Parrilla, plancha y manta' }
+  ],
+},
+{
+  id: 'l-59',
+  name: 'Fogonero Asador Gurú Con Carro',
+  price: 683563.00,
+  category: Category.FOGONES,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/FogoneroGurúConCarro.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Diámetro', value: '80 cm' },
+    { label: 'Peso', value: '62 kg' },
+    { label: 'Incluye', value: 'Parrilla, plancha, manta y carro' }
+  ],
+},
+{
+  id: 'l-60',
+  name: 'Fogonero Orion',
+  price: 817250.00,
+  category: Category.FOGONES,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/FogoneroOrión.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Diámetro', value: '120 cm' },
+    { label: 'Peso', value: '71 kg' },
+    { label: 'Incluye', value: '2 parrillas, plancha y manta' }
+  ],
+},
+{
+  id: 'l-61',
+  name: 'Fogonero Asador Orion Con Carro',
+  price: 1145486.00,
+  category: Category.FOGONES,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/FogoneroOriónConCaro.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Diámetro', value: '120 cm' },
+    { label: 'Peso', value: '103 kg' },
+    { label: 'Incluye', value: '2 parrillas, plancha, manta y carro' }
+  ],
+},
+{
+  id: 'l-62',
+  name: 'Fogón Luno 500',
+  price: 250440.00,
+  category: Category.FOGONES,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/FogónLuno500.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '47 cm' },
+    { label: 'Ancho', value: '58 cm' },
+    { label: 'Profundidad', value: '42 cm' }
+  ],
+},
+{
+  id: 'l-63',
+  name: 'Fogón Luno 700',
+  price: 311401.00,
+  category: Category.FOGONES,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/FogónLuno700.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '100 cm' },
+    { label: 'Ancho', value: '58 cm' },
+    { label: 'Profundidad', value: '75 cm' }
+  ],
+},
+
+{
+  id: 'l-64',
+  name: 'Fogonero Zen 700',
+  price: 267928.00,
+  category: Category.FOGONES,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/FogónZen700.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '50 cm' },
+    { label: 'Diámetro', value: '70 cm' },
+    { label: 'Peso', value: '32 kg' }
+  ],
+},
+{
+  id: 'l-65',
+  name: 'Fogón Chimenea de Jardín Origami 120',
+  price: 286000.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/fogon-origami-120.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '120 cm' },
+    { label: 'Uso', value: 'Exterior' },
+    { label: 'Diseño', value: 'Origami' }
+  ],
+},
+{
+  id: 'l-66',
+  name: 'Fogón Chimenea de Jardín Pirámide 120',
+  price: 331760.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/fogon-piramide-120.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '120 cm' },
+    { label: 'Uso', value: 'Exterior' },
+    { label: 'Diseño', value: 'Pirámide' }
+  ],
+},
+{
+  id: 'l-67',
+  name: 'Maula 7',
+  price: 361627.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/Maula7.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '56 cm' },
+    { label: 'Ancho', value: '48 cm' },
+    { label: 'Profundidad', value: '45 cm' }
+  ],
+},
+{
+  id: 'l-68',
+  name: 'Maula 10',
+  price: 516610.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/Maula10.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '58 cm' },
+    { label: 'Ancho', value: '50 cm' },
+    { label: 'Profundidad', value: '46 cm' }
+  ],
+},
+{
+  id: 'l-69',
+  name: 'Euca 8',
+  price: 675517.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/Euca8.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '60 cm' },
+    { label: 'Ancho', value: '43.4 cm' },
+    { label: 'Profundidad', value: '49 cm' }
+  ],
+},
+{
+  id: 'l-70',
+  name: 'Euca 10',
+  price: 933716.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/Euca10.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '72 cm' },
+    { label: 'Ancho', value: '48 cm' },
+    { label: 'Profundidad', value: '49 cm' }
+  ],
+},
+{
+  id: 'l-71',
+  name: 'Euca 15',
+  price: 1087532.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/Euca15.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '90 cm' },
+    { label: 'Ancho', value: '64 cm' },
+    { label: 'Profundidad', value: '49 cm' }
+  ],
+},
+{
+  id: 'l-72',
+  name: 'Buho 13',
+  price: 1108324.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/Buho13.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '91.3 cm' },
+    { label: 'Ancho', value: '69 cm' },
+    { label: 'Profundidad', value: '45.8 cm' }
+  ],
+},
+{
+  id: 'l-73',
+  name: 'Buho 16',
+  price: 1202947.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/Buho16.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '91.3 cm' },
+    { label: 'Ancho', value: '80.3 cm' },
+    { label: 'Profundidad', value: '45.8 cm' }
+  ],
+},
+{
+  id: 'l-74',
+  name: 'Buho 23',
+  price: 1610825.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/Buho23.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '98 cm' },
+    { label: 'Ancho', value: '88 cm' },
+    { label: 'Profundidad', value: '58.5 cm' }
+  ],
+},
+
+{
+  id: 'l-75',
+  name: 'Set Pala y Atizador',
+  price: 32340.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/SetDePalaYAtizador.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Largo Pala', value: '59 cm' },
+    { label: 'Largo Atizador', value: '55 cm' },
+    { label: 'Uso', value: 'Accesorio para parrilla o fogón' }
+  ],
+},
+{
+  id: 'l-76',
+  name: 'Plancha 1 Hornalla',
+  price: 30177.00,
+  category: Category.CALEFACCION,
+  brand: Brand.VULE,
+  imageUrl: 'fotos/Vule/Plancha1Hornalla.png',
+  isBestSeller: false,
+  specs: [
+    { label: 'Alto', value: '27 cm' },
+    { label: 'Ancho', value: '27 cm' },
+    { label: 'Uso', value: 'Cocción sobre fogón o parrilla' }
+  ],
+},
+
+
+
   
   
 ];
+
+
