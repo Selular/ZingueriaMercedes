@@ -1536,6 +1536,18 @@ export const products: Product[] = [
   specs: [],
 },
 
+/*{
+  id: 'numero cualquiera',
+  name: 'nombre del producto',
+  price: precio.00,
+  category: Category.HORNOS/PARRILLAS/FOGONEROS/ACCESORIOS,
+  brand: Brand.TROMEN/LEPEN/VULE,
+  imageUrl: '',
+  isBestSeller: false/TRUE,
+  specs: [],
+},*/
+
+ 
 ];
 
 
