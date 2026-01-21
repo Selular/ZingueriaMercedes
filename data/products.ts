@@ -11,7 +11,7 @@ export const products: Product[] = [
     installments:3 & 6,
     category: Category.CALEFACCION,
     brand: Brand.LEPEN,
-    imageUrl: '/fotos/Moquehue9000.png',
+    imageUrl: './fotos/Moquehue9000.png',
     features: [ 'Vidrio vitrocerámico', 'Cajón cenicero','Doble combustión'],
     isBestSeller: true,
     specs: [
