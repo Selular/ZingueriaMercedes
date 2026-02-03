@@ -7,7 +7,7 @@ interface ProductCardProps {
   onAddToCart: () => void;
   onClick?: () => void;
 }
-
+/*chusmear más tarde*/
 const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onClick }) => {
   const formattedPrice = new Intl.NumberFormat('es-AR', {
     style: 'currency',

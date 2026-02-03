@@ -18,7 +18,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
 
   const formattedPrice = currencyFormatter.format(product.price);
   
-  // Simulamos intereses (15% para 3 cuotas, 30% para 6 cuotas)
+  /* Simulo los intereses (15% para 3 cuotas, 30% para 6 cuotas) PREGUNTAR A PAPÁ*/
   const cuota3Value = currencyFormatter.format((product.price * 1.15) / 3);
   const cuota6Value = currencyFormatter.format((product.price * 1.30) / 6);
 
@@ -121,7 +121,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
             </div>
           </div>
 
-          {/* Footer fijado */}
+          {/* Footer fijado VER */}
           <div className="p-6 md:p-10 border-t border-zinc-100 bg-zinc-50 flex flex-col sm:flex-row items-center justify-between gap-6 shrink-0">
             <div className="text-center sm:text-left">
               <p className="text-zinc-400 text-[9px] font-black uppercase tracking-widest mb-1">Precio Pago Contado</p>

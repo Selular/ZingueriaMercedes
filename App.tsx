@@ -18,7 +18,7 @@ const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   
-  // Estado para la paginación (Ver más)
+  /*(Ver más) para q evite cargar todo */
   const PRODUCTS_PER_PAGE = 6;
   const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_PAGE);
 
@@ -31,14 +31,14 @@ const App: React.FC = () => {
     });
   }, [selectedCategory, selectedBrand, searchQuery]);
 
-  // Productos que realmente se muestran según la paginación
+  /* Productos que realmente se muestran según la paginación*/
   const visibleProducts = useMemo(() => {
     return filteredProducts.slice(0, visibleCount);
   }, [filteredProducts, visibleCount]);
 
   const bestSellers = useMemo(() => products.filter(p => p.isBestSeller), []);
 
-  // Reiniciar el contador cuando cambian los filtros
+  /* Reiniciar el contador cuando cambian los filtros*/
   useEffect(() => {
     setVisibleCount(PRODUCTS_PER_PAGE);
   }, [selectedCategory, selectedBrand, searchQuery]);
@@ -147,7 +147,7 @@ const App: React.FC = () => {
               ))}
             </div>
 
-            {/* Botón Ver Más */}
+            {/* Botón dever más */}
             {filteredProducts.length > visibleCount && (
               <div className="mt-20 flex flex-col items-center">
                 <div className="w-full h-px bg-zinc-200 mb-10"></div>

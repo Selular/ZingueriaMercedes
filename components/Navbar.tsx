@@ -26,17 +26,17 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick, searchQuery, se
 
   return (
     <nav className="fixed top-0 left-0 right-0 h-20 bg-black/90 text-white flex items-center justify-between px-6 z-50 backdrop-blur-md border-b border-white/5">
-      {/* Logo y Branding */}
+      {/* Logo y  elBranding */}
       <div className="flex items-center gap-6">
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          {/* Logo traslúcido sin delineado */}
+          {/* Logo 2 */}
           <div className="w-12 h-10 flex items-center justify-center font-black text-3xl bold text-[#F97316] drop-shadow-[0_0_8px_rgba(249,115,22,0.3)]">
             ZM
           </div>
           <span className="font-bold text-xl tracking-tight hidden lg:block">Zinguería <span className="text-[#F97316]">Mercedes</span></span>
         </div>
 
-        {/* Links de Navegación */}
+        {/* Links para navegar en la pag*/}
         <div className="hidden md:flex items-center gap-8 text-[12px] regular uppercase tracking-[0.15em] text-zinc-400">
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors">Inicio</button>
           <button onClick={() => scrollToSection('catalog-start')} className="hover:text-white transition-colors">Productos</button>

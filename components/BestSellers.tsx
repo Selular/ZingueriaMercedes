@@ -14,11 +14,11 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
 
-  // Verifica la posición del scroll para habilitar/deshabilitar flechas
+
   const checkScroll = () => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      // Usamos un pequeño margen (5px) para evitar problemas de redondeo en navegadores
+      // Uso un pequeño margen de 5px para evitar problemas de redondeo :p
       setShowLeftArrow(scrollLeft > 5);
       setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 5);
     }
@@ -28,12 +28,8 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
     const container = scrollContainerRef.current;
     if (container) {
       container.addEventListener('scroll', checkScroll);
-      // Verificación inicial
       checkScroll();
-      
-      // Volver a verificar si cambia el tamaño de la ventana
       window.addEventListener('resize', checkScroll);
-      
       return () => {
         container.removeEventListener('scroll', checkScroll);
         window.removeEventListener('resize', checkScroll);
@@ -44,7 +40,6 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const { clientWidth } = scrollContainerRef.current;
-      // Desplazamiento de una página completa (ancho del contenedor visible)
       const scrollAmount = clientWidth; 
       const scrollTo = direction === 'left' 
         ? scrollContainerRef.current.scrollLeft - scrollAmount 
@@ -117,7 +112,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
               />
             </div>
           ))}
-          {/* Espaciador final para permitir scroll completo y alineación */}
+          {/* Espaciador final por el scroll completillo*/}
           <div className="min-w-[1px] h-full shrink-0"></div>
         </div>
       </div>
