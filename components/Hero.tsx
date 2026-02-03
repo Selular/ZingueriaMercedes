@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
           <p className="text-zinc-200 text-lg md:text-xl mb-12 leading-relaxed max-w-2xl font-medium drop-shadow-md">
             Fabricamos soluciones en zinguería a medida y <br />
             distribuimos las mejores marcas de cada calefacción del país: <br />
-            <span className="text-white font-black uppercase tracking-widest bg-black/20 px-0 py-1 rounded backdrop-blur-sm">Tromen y Lepen.</span>
+            <span className="text-white font-black uppercase tracking-widest bg-black/20 px-0 py-1 rounded backdrop-blur-sm">Tromen, Lepen y Vule.</span>
           </p>
 
           <div className="flex flex-wrap gap-6">
