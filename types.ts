@@ -28,7 +28,7 @@ export interface Product {
   id: string;
   name: string;
   price: number;
-  installments?: number[]; // Cantidad de cuotas disponibles, ej: [3, 6]
+  installments?: number[]; // Cantidad de cuotas disponibles, ejemplito: [3, 6]
   category: Category;
   brand: Brand;
   imageUrl: string;
