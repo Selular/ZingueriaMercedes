@@ -91,7 +91,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-50 flex flex-col scroll-smooth">
+    <div className="app-shell min-h-screen bg-zinc-50 flex flex-col scroll-smooth">
       <Navbar 
         cartCount={cart.reduce((acc, item) => acc + item.quantity, 0)} 
         onCartClick={() => setIsCartOpen(true)}
@@ -105,7 +105,7 @@ const App: React.FC = () => {
         <BestSellers products={bestSellers} onAddToCart={addToCart} onSelectProduct={setSelectedProduct} />
       </div>
       
-      <div id="catalog-start" className="max-w-7xl mx-auto px-6 py-24 w-full">
+      <div id="catalog-start" className="section-container w-full">
         <div className="flex flex-col lg:flex-row gap-16">
           
           <Sidebar 
@@ -116,10 +116,10 @@ const App: React.FC = () => {
           />
           
           <main className="flex-1">
-            <header className="mb-16">
+            <header className="catalog-header mb-16">
               <div className="flex items-center gap-4 mb-4">
                 <span className="h-px w-12 bg-[#F97316]"></span>
-                <span className="text-[11px] font-black text-[#F97316] uppercase tracking-[0.5em]">Nuestros Productos</span>
+                <span className="subtitle text-[11px] font-black text-[#F97316] uppercase tracking-[0.5em]">Nuestros Productos</span>
               </div>
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
@@ -196,7 +196,7 @@ const App: React.FC = () => {
         onAddToCart={() => selectedProduct && addToCart(selectedProduct)} 
       />
 
-      <footer className="bg-black text-white pt-20 pb-12 px-6 border-t border-white/5">
+      <footer className="site-footer bg-black text-white pt-20 pb-12 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
           <div className="space-y-6">
             <div className="flex items-center gap-2">

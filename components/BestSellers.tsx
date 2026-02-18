@@ -97,7 +97,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
 
         <div 
           ref={scrollContainerRef}
-          className="flex gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-10 cursor-grab active:cursor-grabbing"
+          className="best-sellers-track flex gap-8 overflow-x-auto snap-x snap-mandatory pb-10 cursor-grab active:cursor-grabbing"
           style={{ scrollBehavior: 'smooth' }}
         >
           {products.map((product) => (
@@ -117,10 +117,6 @@ const BestSellers: React.FC<BestSellersProps> = ({ products, onAddToCart, onSele
         </div>
       </div>
 
-      <style>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
     </section>
   );
 };
