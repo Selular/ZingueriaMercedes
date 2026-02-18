@@ -1,0 +1,22 @@
+@use '../abstracts/variables' as *;
+
+%focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba($brand-orange, 0.35);
+}
+
+.is-focusable {
+  &:focus-visible {
+    @extend %focus-ring;
+  }
+}
+
+@each $name, $color in (
+  orange: $brand-orange,
+  black: $ink-950,
+  light: $text-light
+) {
+  .u-text-#{$name} {
+    color: $color;
+  }
+}

@@ -25,10 +25,10 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick, searchQuery, se
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 h-20 bg-black/90 text-white flex items-center justify-between px-6 z-50 backdrop-blur-md border-b border-white/5">
+    <nav className="navbar-shell fixed top-0 left-0 right-0 h-20 bg-black/90 text-white flex items-center justify-between px-6 z-50 backdrop-blur-md border-b border-white/5">
       {/* Logo y  elBranding */}
       <div className="flex items-center gap-6">
-        <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <div className="navbar-brand flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           {/* Logo 2 */}
           <div className="w-12 h-10 flex items-center justify-center font-black text-3xl bold text-[#F97316] drop-shadow-[0_0_8px_rgba(249,115,22,0.3)]">
             ZM
@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick, searchQuery, se
             placeholder="¿Qué estás buscando?" 
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-zinc-900/50 border border-white/10 rounded-full py-2.5 px-12 focus:outline-none focus:ring-1 focus:ring-[#F97316] transition-all text-sm text-zinc-300 placeholder-zinc-600"
+            className="is-focusable w-full bg-zinc-900/50 border border-white/10 rounded-full py-2.5 px-12 focus:outline-none focus:ring-1 focus:ring-[#F97316] transition-all text-sm text-zinc-300 placeholder-zinc-600"
           />
           <svg className="w-4 h-4 text-zinc-600 absolute left-5 top-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -65,7 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick, searchQuery, se
       <div className="flex items-center">
         <button 
           onClick={onCartClick}
-          className="relative p-2.5 hover:bg-white/5 rounded-full transition-colors group"
+          className="navbar-cart is-focusable relative p-2.5 hover:bg-white/5 rounded-full transition-colors group"
         >
           <svg className="w-6 h-6 text-zinc-400 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />

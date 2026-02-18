@@ -18,9 +18,17 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
 
   const formattedPrice = currencyFormatter.format(product.price);
   
-  /* Simulo los intereses (15% para 3 cuotas, 30% para 6 cuotas) PREGUNTAR A PAPÁ*/
-  const cuota3Value = currencyFormatter.format((product.price * 1.15) / 3);
-  const cuota6Value = currencyFormatter.format((product.price * 1.30) / 6);
+  const availableInstallments = product.installments?.length
+    ? [...product.installments].sort((a, b) => a - b)
+    : [3, 6];
+
+  const installmentCards = availableInstallments.map((installments) => {
+    const interestRate = installments >= 6 ? 1.3 : 1.15;
+    return {
+      installments,
+      value: currencyFormatter.format((product.price * interestRate) / installments),
+    };
+  });
 
   const handleWhatsAppInquiry = () => {
     const phone = "5492324699889";
@@ -81,16 +89,31 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
 
               {/* Opciones de cuotas con interés */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div className="bg-zinc-100 p-5 rounded-2xl border border-zinc-200 flex flex-col relative overflow-hidden">
-                   <span className="text-zinc-400 text-[8px] font-black uppercase tracking-[0.2em] mb-1">Financiación</span>
-                   <p className="text-zinc-900 text-lg font-black leading-none">3 CUOTAS FIJAS</p>
-                   <p className="text-zinc-500 text-xs font-bold mt-1">Valor por cuota: <span className="text-zinc-900">{cuota3Value}</span></p>
-                </div>
-                <div className="bg-zinc-900 p-5 rounded-2xl flex flex-col relative overflow-hidden group shadow-lg">
-                   <span className="text-orange-500 text-[8px] font-black uppercase tracking-[0.2em] mb-1">Plan Extendido</span>
-                   <p className="text-white text-lg font-black leading-none">6 CUOTAS FIJAS</p>
-                   <p className="text-zinc-400 text-xs font-bold mt-1">Valor por cuota: <span className="text-white font-black">{cuota6Value}</span></p>
-                </div>
+                {installmentCards.map((card) => (
+                  <div
+                    key={card.installments}
+                    className={`p-5 rounded-2xl flex flex-col relative overflow-hidden ${
+                      card.installments >= 6
+                        ? 'bg-zinc-900 shadow-lg'
+                        : 'bg-zinc-100 border border-zinc-200'
+                    }`}
+                  >
+                    <span
+                      className={`text-[8px] font-black uppercase tracking-[0.2em] mb-1 ${
+                        card.installments >= 6 ? 'text-orange-500' : 'text-zinc-400'
+                      }`}
+                    >
+                      {card.installments >= 6 ? 'Plan Extendido' : 'Financiación'}
+                    </span>
+                    <p className={`text-lg font-black leading-none ${card.installments >= 6 ? 'text-white' : 'text-zinc-900'}`}>
+                      {card.installments} CUOTAS FIJAS
+                    </p>
+                    <p className={`text-xs font-bold mt-1 ${card.installments >= 6 ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                      Valor por cuota:{' '}
+                      <span className={card.installments >= 6 ? 'text-white font-black' : 'text-zinc-900'}>{card.value}</span>
+                    </p>
+                  </div>
+                ))}
               </div>
 
               {/* Especificaciones técnicas */}
@@ -152,12 +175,6 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
         </div>
       </div>
 
-      <style>{`
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e4e4e7; border-radius: 10px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #F97316; }
-      `}</style>
     </div>
   );
 };

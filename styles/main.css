@@ -1,0 +1,61 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Inter', sans-serif; }
+
+.app-shell { min-height: 100vh; }
+.section-container {
+  padding-inline: clamp(1rem, 4vw, 2rem);
+  padding-block: clamp(3rem, 7vw, 6rem);
+  max-width: 80rem;
+  margin-inline: auto;
+}
+.site-footer { border-top: 1px solid rgba(255, 255, 255, 0.08); }
+
+@keyframes float-up {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.navbar-shell { min-height: 80px; }
+.navbar-shell .navbar-brand,
+.navbar-shell .navbar-cart {
+  transition: transform 250ms ease, box-shadow 250ms ease, color 200ms ease;
+}
+.navbar-shell .navbar-brand:hover { transform: scale(1.02); transform-origin: left center; }
+.navbar-shell .navbar-cart:hover { transform: scale(1.06); }
+
+.hero-shell { min-height: 100dvh; }
+.hero-shell .hero-cta-primary {
+  transition: background-color 220ms ease, transform 220ms ease;
+}
+.hero-shell .hero-cta-primary:hover { background-color: #ea580c; }
+.hero-shell .hero-cta-primary:active { transform: scale(0.97); }
+.hero-shell .hero-scroll-indicator { animation: float-up 2.2s ease-in-out infinite; }
+
+.product-card { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); }
+.product-card .product-add-btn { transition: transform 220ms ease, background-color 220ms ease; }
+.product-card .product-add-btn:hover { background-color: #09090b; }
+.product-card .product-add-btn:active { transform: scale(0.94); }
+
+.best-sellers-track { scrollbar-width: none; -ms-overflow-style: none; }
+.best-sellers-track::-webkit-scrollbar { display: none; }
+
+.catalog-header .subtitle { letter-spacing: 0.45em; }
+
+.is-focusable:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.35);
+}
+
+.u-text-orange { color: #f97316; }
+.u-text-black { color: #09090b; }
+.u-text-light { color: #e4e4e7; }
+
+:root { color-scheme: light; }
+
+
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #e4e4e7; border-radius: 10px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #f97316; }

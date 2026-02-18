@@ -1,0 +1,27 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.product-card {
+  box-shadow: $shadow-soft;
+
+  .product-add-btn {
+    transition: transform 220ms ease, background-color 220ms ease;
+
+    &:hover {
+      background-color: $ink-950;
+    }
+
+    &:active {
+      transform: scale(0.94);
+    }
+  }
+}
+
+.best-sellers-track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

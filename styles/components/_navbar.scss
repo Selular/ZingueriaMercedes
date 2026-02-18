@@ -1,0 +1,15 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.navbar-shell {
+  min-height: $navbar-height;
+
+  .navbar-brand {
+    @include interactive-scale(1.02);
+    transform-origin: left center;
+  }
+
+  .navbar-cart {
+    @include interactive-scale(1.06);
+  }
+}

@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black">
+    <section className="hero-shell relative h-screen w-full overflow-hidden bg-black">
       
       <div className="absolute inset-0 z-0">
         <div 
@@ -47,13 +47,13 @@ const Hero: React.FC = () => {
           <div className="flex flex-wrap gap-6">
             <button 
               onClick={scrollToProducts}
-              className="bg-[#F97316] hover:bg-orange-600 text-white font-black uppercase tracking-[0.2em] px-12 py-5 rounded-lg transition-all active:scale-95 text-xs shadow-xl shadow-orange-600/30"
+              className="hero-cta-primary is-focusable bg-[#F97316] hover:bg-orange-600 text-white font-black uppercase tracking-[0.2em] px-12 py-5 rounded-lg transition-all active:scale-95 text-xs shadow-xl shadow-orange-600/30"
             >
               VER CATÁLOGO 
             </button>
             <button 
               onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
-              className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-black uppercase tracking-[0.2em] px-12 py-5 rounded-lg transition-all text-xs"
+              className="is-focusable bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-black uppercase tracking-[0.2em] px-12 py-5 rounded-lg transition-all text-xs"
             >
               CONTACTANOS
             </button>
@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Indicacion del scroll */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50">
+      <div className="hero-scroll-indicator absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50">
         <span className="text-[10px] text-white font-bold uppercase tracking-widest">Descubrir</span>
         <div className="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
       </div>
