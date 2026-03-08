@@ -1,18 +1,18 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Category, Brand, Product, CartItem } from './types';
-import { products as initialProducts } from './data/products';
+import { Category, Brand, Product, CartItem } from './types.ts';
+import { products as initialProducts } from './data/products.ts';
 import Navbar from './components/Navbar';
-import ProductCard from './components/ProductCard';
-import Sidebar from './components/Sidebar';
-import CartSidebar from './components/CartSidebar';
-import Hero from './components/Hero';
-import MapSection from './components/MapSection';
-import BestSellers from './components/BestSellers';
-import ProductDetailsModal from './components/ProductDetailsModal';
-import Login from './components/Admin/Login';
-import Dashboard from './components/Admin/Dashboard';
+import ProductCard from './components/ProductCard.tsx';
+import Sidebar from './components/Sidebar.tsx';
+import CartSidebar from './components/CartSidebar.tsx';
+import Hero from './components/Hero.tsx';
+import MapSection from './components/MapSection.tsx';
+import BestSellers from './components/BestSellers.tsx';
+import ProductDetailsModal from './components/ProductDetailsModal.tsx';
+import Login from './components/Admin/Login.tsx';
+import Dashboard from './components/Admin/Dashboard.tsx';
 
 const MainStore: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
