@@ -1,5 +1,4 @@
-
-import { Product, Category, Brand } from '../types';
+import { Product, Category, Brand } from './types.ts';
 
 export const products: Product[] = [
  
