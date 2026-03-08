@@ -248,7 +248,7 @@ const Dashboard: React.FC = () => {
                     <td className="px-8 py-6">
                       <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-xl overflow-hidden bg-zinc-100 shrink-0">
-                          <img src={product.imageUrl} alt="" className="w-full h-full object-cover" />
+                          <img src={product.imageUrl} alt="" className="w-full h-full object-contain p-1" />
                         </div>
                         <span className="font-bold text-zinc-900">{product.name}</span>
                       </div>
@@ -444,7 +444,7 @@ const Dashboard: React.FC = () => {
                 </div>
                 {formData.imageUrl && (
                   <div className="mt-4 w-32 h-32 rounded-2xl overflow-hidden border border-zinc-100">
-                    <img src={formData.imageUrl} alt="Preview" className="w-full h-full object-cover" />
+                    <img src={formData.imageUrl} alt="Preview" className="w-full h-full object-contain p-2" />
                   </div>
                 )}
               </div>

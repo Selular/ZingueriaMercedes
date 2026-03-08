@@ -21,7 +21,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onClick
         <img 
           src={product.imageUrl} 
           alt={product.name} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110"
           referrerPolicy="no-referrer"
         />
         <div className="absolute top-4 left-4 flex flex-col gap-2">

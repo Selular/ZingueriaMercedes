@@ -62,7 +62,7 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({ product, onCl
           <img 
             src={product.imageUrl} 
             alt={product.name} 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain p-8"
           />
           <div className="absolute top-6 left-6 flex flex-col gap-2">
              <span className="bg-black/80 backdrop-blur-md text-white px-4 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-[0.2em]">

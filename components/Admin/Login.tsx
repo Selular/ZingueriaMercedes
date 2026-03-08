@@ -11,7 +11,7 @@ const Login: React.FC = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     // Simple mock login
-    if (username === 'admin' && password === 'admin123') {
+    if (username === 'lucianopanessi' && password === 'machaco2026') {
       localStorage.setItem('isAdminAuthenticated', 'true');
       navigate('/admin');
     } else {

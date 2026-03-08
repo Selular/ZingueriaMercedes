@@ -68,7 +68,7 @@ const MapSection: React.FC = () => {
             className="relative h-[600px] rounded-[48px] overflow-hidden shadow-2xl shadow-black/10 border-8 border-white"
           >
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d3283.432657833543!2d-59.42398452425946!3d-34.61848497294951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc730000000001%3A0x0!2zMzTCsDM3JzA2LjUiUyA1OcKwMjUnMTguMSJX!5e0!3m2!1ses-419!2sar!4v1710000000000!5m2!1ses-419!2sar" 
+              src="https://maps.google.com/maps?q=-34.61848497294951,-59.42398452425946&t=&z=15&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

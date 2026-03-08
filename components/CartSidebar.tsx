@@ -62,7 +62,7 @@ ${cart.map(item => `- ${item.name} (${item.quantity} x ${new Intl.NumberFormat('
               cart.map(item => (
                 <div key={item.id} className="flex gap-4 p-4 rounded-xl bg-zinc-50 border border-zinc-100 group">
                   <div className="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-white border border-zinc-100">
-                    <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover" />
+                    <img src={item.imageUrl} alt={item.name} className="w-full h-full object-contain p-2" />
                   </div>
                   <div className="flex-1 flex flex-col justify-between">
                     <div>
