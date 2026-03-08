@@ -34,7 +34,7 @@ const MapSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-black text-zinc-900 uppercase tracking-widest text-xs mb-1">Dirección</h4>
-                  <p className="text-zinc-500 font-medium">Calle 101 y 30bis n°732, Mercedes, BA</p>
+                  <p className="text-zinc-500 font-medium">C. 101 732, Mercedes, Provincia de Buenos Aires</p>
                 </div>
               </div>
 
@@ -68,7 +68,7 @@ const MapSection: React.FC = () => {
             className="relative h-[600px] rounded-[48px] overflow-hidden shadow-2xl shadow-black/10 border-8 border-white"
           >
             <iframe 
-              src="https://www.google.com/maps/place/Zingueria+Mercedes/@-34.6501613,-59.4184213,17z/data=!3m1!4b1!4m6!3m5!1s0x95bc737241c04205:0x8029a30068fc53c9!8m2!3d-34.6501657!4d-59.415841!16s%2Fg%2F11svq8zv11?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D" 
+              src="https://maps.google.com/maps?q=Zingueria%20Mercedes,%20C.%20101%20732,%20Mercedes,%20Provincia%20de%20Buenos%20Aires&t=&z=15&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
