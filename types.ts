@@ -13,8 +13,6 @@ export enum Category {
   FOGONES = 'Fogones',
   PARRILLAS = 'Parrillas',
 
-
-
 }
 
 export enum Brand {
