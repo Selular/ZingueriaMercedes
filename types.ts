@@ -1,4 +1,3 @@
-
 export enum Category {
   CALEFACCION = 'Calefacción',
   CASSETTES = 'Cassettes',
