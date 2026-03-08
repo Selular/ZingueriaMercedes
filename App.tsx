@@ -1,8 +1,7 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Category, Brand, Product, CartItem } from './types.ts';
-import { products as initialProducts } from './data/products.ts';
+import { Category, Brand, Product, CartItem } from '/types.ts';
+import { products as initialProducts } from '/data/products.ts';
 import Navbar from './components/Navbar';
 import ProductCard from './components/ProductCard.tsx';
 import Sidebar from './components/Sidebar.tsx';
