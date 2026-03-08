@@ -23,7 +23,7 @@ const MapSection: React.FC = () => {
                 Donde <span className="text-orange-600">Encontrarnos.</span>
               </h2>
               <p className="text-zinc-500 text-lg leading-relaxed max-w-md">
-                Visítanos en nuestro showroom en Mercedes. Contamos con stock permanente y asesoramiento personalizado para tu proyecto.
+                Visítanos en nuestro local en Mercedes. Contamos con stock permanente y asesoramiento personalizado para tu proyecto.
               </p>
             </div>
 
