@@ -1,16 +1,21 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Category, Brand, Product, CartItem } from './types';
-import { products } from './data/products';
+import { products as initialProducts } from './data/products';
 import Navbar from './components/Navbar';
 import ProductCard from './components/ProductCard';
 import Sidebar from './components/Sidebar';
 import CartSidebar from './components/CartSidebar';
 import Hero from './components/Hero';
+import MapSection from './components/MapSection';
 import BestSellers from './components/BestSellers';
 import ProductDetailsModal from './components/ProductDetailsModal';
+import Login from './components/Admin/Login';
+import Dashboard from './components/Admin/Dashboard';
 
-const App: React.FC = () => {
+const MainStore: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<Category | 'Todos'>('Todos');
   const [selectedBrand, setSelectedBrand] = useState<Brand | 'Todos'>('Todos');
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -18,9 +23,19 @@ const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   
-  /*(Ver más) para q evite cargar todo */
   const PRODUCTS_PER_PAGE = 6;
   const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_PAGE);
+
+  useEffect(() => {
+    // Load products from localStorage or use initial
+    const savedProducts = localStorage.getItem('zm_products');
+    if (savedProducts) {
+      setProducts(JSON.parse(savedProducts));
+    } else {
+      setProducts(initialProducts);
+      localStorage.setItem('zm_products', JSON.stringify(initialProducts));
+    }
+  }, []);
 
   const filteredProducts = useMemo(() => {
     return products.filter(p => {
@@ -29,16 +44,14 @@ const App: React.FC = () => {
       const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
       return matchCategory && matchBrand && matchSearch;
     });
-  }, [selectedCategory, selectedBrand, searchQuery]);
+  }, [selectedCategory, selectedBrand, searchQuery, products]);
 
-  /* Productos que realmente se muestran según la paginación*/
   const visibleProducts = useMemo(() => {
     return filteredProducts.slice(0, visibleCount);
   }, [filteredProducts, visibleCount]);
 
-  const bestSellers = useMemo(() => products.filter(p => p.isBestSeller), []);
+  const bestSellers = useMemo(() => products.filter(p => p.isBestSeller), [products]);
 
-  /* Reiniciar el contador cuando cambian los filtros*/
   useEffect(() => {
     setVisibleCount(PRODUCTS_PER_PAGE);
   }, [selectedCategory, selectedBrand, searchQuery]);
@@ -101,11 +114,13 @@ const App: React.FC = () => {
       
       <Hero />
 
+      <MapSection />
+
       <div id="best-sellers">
         <BestSellers products={bestSellers} onAddToCart={addToCart} onSelectProduct={setSelectedProduct} />
       </div>
       
-      <div id="catalog-start" className="section-container w-full">
+      <div id="catalog-start" className="max-w-7xl mx-auto px-6 py-20 w-full">
         <div className="flex flex-col lg:flex-row gap-16">
           
           <Sidebar 
@@ -116,10 +131,10 @@ const App: React.FC = () => {
           />
           
           <main className="flex-1">
-            <header className="catalog-header mb-16">
+            <header className="mb-16">
               <div className="flex items-center gap-4 mb-4">
                 <span className="h-px w-12 bg-[#F97316]"></span>
-                <span className="subtitle text-[11px] font-black text-[#F97316] uppercase tracking-[0.5em]">Nuestros Productos</span>
+                <span className="text-[11px] font-black text-[#F97316] uppercase tracking-[0.5em]">Nuestros Productos</span>
               </div>
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
@@ -147,7 +162,6 @@ const App: React.FC = () => {
               ))}
             </div>
 
-            {/* Botón dever más */}
             {filteredProducts.length > visibleCount && (
               <div className="mt-20 flex flex-col items-center">
                 <div className="w-full h-px bg-zinc-200 mb-10"></div>
@@ -196,7 +210,7 @@ const App: React.FC = () => {
         onAddToCart={() => selectedProduct && addToCart(selectedProduct)} 
       />
 
-      <footer className="site-footer bg-black text-white pt-20 pb-12 px-6 border-t border-white/5">
+      <footer className="bg-black text-white pt-20 pb-12 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
@@ -254,6 +268,19 @@ const App: React.FC = () => {
         </div>
       </footer>
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainStore />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Dashboard />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Router>
   );
 };
 
