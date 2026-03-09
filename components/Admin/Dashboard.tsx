@@ -152,15 +152,12 @@ const Dashboard: React.FC = () => {
       <aside className="w-72 bg-zinc-950 text-white flex flex-col p-8 sticky top-0 h-screen">
         <div className="flex items-center gap-3 mb-12">
           <div className="w-10 h-10 flex items-center justify-center font-black text-3xl text-orange-600">ZM</div>
-          <span className="font-bold text-lg">Admin Panel</span>
+          <span className="font-bold text-lg">Administración</span>
         </div>
 
         <nav className="flex-1 space-y-2">
           <button className="w-full flex items-center gap-4 px-6 py-4 bg-orange-600 rounded-2xl font-bold text-sm transition-all">
             <Package size={20} /> Productos
-          </button>
-          <button className="w-full flex items-center gap-4 px-6 py-4 text-zinc-500 hover:text-white hover:bg-white/5 rounded-2xl font-bold text-sm transition-all">
-            <TrendingUp size={20} /> Estadísticas
           </button>
         </nav>
 
@@ -177,7 +174,7 @@ const Dashboard: React.FC = () => {
         <header className="flex items-center justify-between mb-12">
           <div>
             <h1 className="text-4xl font-black text-zinc-900 tracking-tighter mb-2">Gestión de Productos</h1>
-            <p className="text-zinc-400 font-medium">Administra el catálogo de Zinguería Mercedes</p>
+            <p className="text-zinc-400 font-medium">Gestión del catálogo de Zinguería Mercedes</p>
           </div>
           <button 
             onClick={() => openModal()}
