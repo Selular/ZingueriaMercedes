@@ -77,9 +77,7 @@ const MapSection: React.FC = () => {
               referrerPolicy="no-referrer-when-downgrade"
               className="grayscale hover:grayscale-0 transition-all duration-1000"
             ></iframe>
-            <div className="absolute top-8 right-8 bg-black text-white px-6 py-3 rounded-2xl font-black text-[10px] uppercase tracking-widest shadow-xl">
-              Showroom Mercedes
-            </div>
+            
           </motion.div>
         </div>
       </div>

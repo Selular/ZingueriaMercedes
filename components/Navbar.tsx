@@ -39,7 +39,6 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick, searchQuery, se
           <button onClick={() => scrollToSection('where-to-find-us')} className="hover:text-white transition-colors">Ubicación</button>
           <button onClick={() => scrollToSection('catalog-start')} className="hover:text-white transition-colors">Productos</button>
           <button onClick={() => scrollToSection('best-sellers')} className="hover:text-white transition-colors">Destacados</button>
-          <button onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })} className="hover:text-white transition-colors">Contacto</button>
         </div>
       </div>
 
